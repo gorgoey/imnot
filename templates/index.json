@@ -12,7 +12,7 @@
     "image_banner": {
       "type": "image-banner",
       "custom_css": [
-
+        "@media (max-width: 767px) {.banner {display: none; }}"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/S6_0658_5a4a0e1a-3efc-44d3-a7c8-317cf17cc411.jpg",
