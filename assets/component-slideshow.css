@@ -14,6 +14,10 @@ slideshow-component {
   transform: translateY(-50%);
 }
 
+.imnot_body .slideshow__link {
+  height: 100%;
+}
+
 .imnot_body slideshow-component .slider-button.slider-button--prev {
   left: 0;
 }
