@@ -2972,3 +2972,7 @@ details-disclosure > details {
 .footer-password--icon img {
   width: 100%;
 }
+
+.imnot .section+.section {
+  margin-top: inherit;
+}
