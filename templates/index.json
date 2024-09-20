@@ -12,7 +12,7 @@
     "image_banner": {
       "type": "image-banner",
       "custom_css": [
-        "@media only screen and (min-width: 601px) {.banner--mobile-bottom {display: none; } .banner--large {display: block; }}"
+
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/S6_0658_5a4a0e1a-3efc-44d3-a7c8-317cf17cc411.jpg",
@@ -31,7 +31,7 @@
     "image_banner_BHMUfb": {
       "type": "image-banner",
       "custom_css": [
-        "@media only screen and (max-width: 600px) {.banner--mobile-bottom {display: block; } .banner--large.banner--adapt {display: none; }}"
+
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/S6_0540.jpg",
