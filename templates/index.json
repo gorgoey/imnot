@@ -53,6 +53,9 @@
         "slide_j3Bqww",
         "slide_bw493F"
       ],
+      "custom_css": [
+        "@media (max-width: 767px) {.slideshow {display: none; }}"
+      ],
       "settings": {
         "layout": "full_bleed",
         "slide_height": "adapt_image",
