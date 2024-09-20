@@ -22,6 +22,11 @@ slideshow-component {
   right: 0;
 }
 
+.imnot_body slideshow-component .slider-button .slideshow__autoplay , 
+.imnot_body slideshow-component .slider-button .slider-counter--dots{
+  display: none;
+}
+
 @media screen and (max-width: 989px) {
   .no-js slideshow-component .slider {
     padding-bottom: 3rem;
