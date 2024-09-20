@@ -11,6 +11,9 @@
   "sections": {
     "image_banner": {
       "type": "image-banner",
+      "custom_css": [
+
+      ],
       "settings": {
         "image": "shopify:\/\/shop_images\/S6_0658_5a4a0e1a-3efc-44d3-a7c8-317cf17cc411.jpg",
         "image_overlay_opacity": 0,
@@ -21,7 +24,7 @@
         "desktop_content_alignment": "center",
         "color_scheme": "background-1",
         "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
+        "stack_images_on_mobile": false,
         "show_text_below": false
       }
     },
