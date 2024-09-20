@@ -11,6 +11,7 @@
   "sections": {
     "image_banner": {
       "type": "image-banner",
+      "disabled": true,
       "custom_css": [
 
       ],
@@ -30,7 +31,6 @@
     },
     "image_banner_BHMUfb": {
       "type": "image-banner",
-      "disabled": true,
       "custom_css": [
 
       ],
