@@ -111,7 +111,7 @@
         "slide_xAjHA6"
       ],
       "custom_css": [
-        "@media (min-width: 768px) {.slideshow {display: none; }}"
+        "@media (min-width: 768px) {slideshow-component {display: none; }}"
       ],
       "settings": {
         "layout": "full_bleed",
