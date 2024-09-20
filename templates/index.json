@@ -30,6 +30,9 @@
     },
     "image_banner_BHMUfb": {
       "type": "image-banner",
+      "custom_css": [
+        "@media only screen and (max-width: 600px) {.banner--mobile-bottom {display: block;}}"
+      ],
       "settings": {
         "image": "shopify:\/\/shop_images\/S6_0540.jpg",
         "image_overlay_opacity": 0,
