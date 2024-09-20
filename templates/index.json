@@ -12,7 +12,7 @@
     "image_banner": {
       "type": "image-banner",
       "custom_css": [
-        "@media only screen and (min-width: 601px) {.banner--mobile-bottom {display: none; } .banner--large.banner--adapt {display: block; }}"
+        "@media only screen and (min-width: 601px) {.banner--mobile-bottom {display: none; } .banner--large {display: block; }}"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/S6_0658_5a4a0e1a-3efc-44d3-a7c8-317cf17cc411.jpg",
