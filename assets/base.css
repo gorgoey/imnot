@@ -2973,6 +2973,6 @@ details-disclosure > details {
   width: 100%;
 }
 
-.imnot .section+.section {
-  margin-top: inherit;
+.imnot_body .section+.section {
+  margin-top: 0;
 }
