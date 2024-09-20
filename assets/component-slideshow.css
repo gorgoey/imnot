@@ -22,8 +22,8 @@ slideshow-component {
   right: 0;
 }
 
-.imnot_body slideshow-component .slider-button .slideshow__autoplay , 
-.imnot_body slideshow-component .slider-button .slider-counter--dots{
+.imnot_body slideshow-component .slideshow__autoplay , 
+.imnot_body slideshow-component .slider-counter--dots{
   display: none;
 }
 
