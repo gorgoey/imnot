@@ -22,6 +22,22 @@
         "color_scheme": "background-1",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "image_banner_BHMUfb": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/S6_0658.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
         "show_text_below": true
       }
     },
@@ -186,6 +202,7 @@
   },
   "order": [
     "image_banner",
+    "image_banner_BHMUfb",
     "featured_collection",
     "collage",
     "video",
