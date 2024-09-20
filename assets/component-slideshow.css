@@ -4,7 +4,7 @@ slideshow-component {
   flex-direction: column;
 }
 
-.imnot_body slideshow-component {
+.imnot_body slideshow-component .slideshow__controls {
   position: unset;
 }
 
