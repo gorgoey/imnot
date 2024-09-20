@@ -8,6 +8,20 @@ slideshow-component {
   position: unset;
 }
 
+.imnot_body slideshow-component .slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.imnot_body slideshow-component .slider-button.slider-button--prev {
+  left: 0;
+}
+
+.imnot_body slideshow-component .slider-button.slider-button--next {
+  right: 0;
+}
+
 @media screen and (max-width: 989px) {
   .no-js slideshow-component .slider {
     padding-bottom: 3rem;
