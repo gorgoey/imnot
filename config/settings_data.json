@@ -234,6 +234,9 @@
           "footer-2",
           "footer-1"
         ],
+        "custom_css": [
+          ".footer {margin: 0;}"
+        ],
         "settings": {
           "color_scheme": "accent-1",
           "newsletter_enable": true,
