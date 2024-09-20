@@ -27,7 +27,7 @@ slideshow-component {
   display: none;
 }
 
-.imnot_body .slideshow__text {
+.imnot_body .slideshow__text.banner__box {
   display: none;
 }
 
