@@ -101,6 +101,7 @@
             <ul id="product-grid" data-id="{{ section.id }}" class="
               grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
               grid--{{ section.settings.columns_desktop }}-col-desktop">
+              <div id="Imnot-Loops">
               {%- for product in collection.products -%}
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
@@ -120,11 +121,13 @@
                   %}
                 </li>
               {%- endfor -%}
+              </div>
             </ul>
-    
-            {%- if paginate.pages > 1 -%}
-              {% render 'pagination', paginate: paginate, anchor: '' %}
-            {%- endif -%}
+            <div class="Imnot-Paginate">
+              {%- if paginate.pages > 1 -%}
+                {% render 'pagination', paginate: paginate, anchor: '' %}
+              {%- endif -%}
+            </div>
           </div>
         {%- endif -%}
       {%- endpaginate -%}
@@ -290,3 +293,12 @@
   ]
 }
 {% endschema %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var endlessScroll = new Ajaxinate({
+      container: '#Imnot-Loops',
+      pagination: '#Imnot-Paginate'
+    });
+  });
+</script>
