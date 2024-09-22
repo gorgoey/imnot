@@ -25,6 +25,10 @@
 -%}
 
 <div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}">
+  <h1 class="collection-hero__title">
+    <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+    {{- collection.title | escape -}}
+  </h1>
   {%- if filter_type == 'vertical' or filter_type == 'horizontal' -%}
     <facet-filters-form class="facets small-hide">
       <form id="FacetFiltersForm" class="{% if filter_type == 'horizontal' %}facets__form{% else %}facets__form-vertical{% endif %}">
