@@ -5,6 +5,12 @@
   padding-top: 1rem;
 }
 
+.collection-facets__title {
+  margin: 0;
+  font-weight: 900;
+  color: #000;
+}
+
 .active-facets-mobile {
   margin-bottom: 0.5rem;
 }
