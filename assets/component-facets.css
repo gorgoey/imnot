@@ -573,6 +573,10 @@ a.active-facets__button.focused .active-facets__button-inner,
   display: flex;
 }
 
+.mobile-facets__disclosure .mobile-facets__open .mobile-facets__open-label.medium-hide {
+  display: none;
+}
+
 .mobile-facets__wrapper {
   margin-left: 0;
   display: flex;
