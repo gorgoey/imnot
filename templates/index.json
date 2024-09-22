@@ -67,10 +67,48 @@
             "color_scheme": "background-1",
             "text_alignment_mobile": "center"
           }
+        },
+        "slide_bqB3KD": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/S3_0263.jpg",
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_ARCUmK": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/S2_0215.jpg",
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
         }
       },
       "block_order": [
-        "slide_L8NqMc"
+        "slide_L8NqMc",
+        "slide_bqB3KD",
+        "slide_ARCUmK"
       ],
       "custom_css": [
         "@media (min-width: 768px) {slideshow-component {display: none; }}"
