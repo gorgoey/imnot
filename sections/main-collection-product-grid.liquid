@@ -103,10 +103,12 @@
                 grid--{{ section.settings.columns_desktop }}-col-desktop">
 
                 {%- for product in collection.products -%}
+                  {%  comment  %}
                   {% assign lazy_load = false %}
                   {%- if forloop.index > 2 -%}
                     {%- assign lazy_load = true -%}
                   {%- endif -%}
+                  {% endcomment %}
                   <li class="grid__item">
                     {% render 'card-product',
                       card_product: product,
@@ -120,6 +122,7 @@
 
                     %}
                   </li>
+
                 {%- endfor -%}
 
               </ul>
