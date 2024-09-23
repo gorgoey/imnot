@@ -117,7 +117,7 @@
     "social_twitter_link": "",
     "social_facebook_link": "",
     "social_pinterest_link": "",
-    "social_instagram_link": "https:\/\/www.instagram.com\/imnotamorningperson__official\/",
+    "social_instagram_link": "https://www.instagram.com/imnotamorningperson__official/",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
@@ -126,12 +126,12 @@
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
-    "favicon": "shopify:\/\/shop_images\/favicon.png",
+    "favicon": "shopify://shop_images/favicon.png",
     "currency_code_enabled": true,
     "cart_type": "notification",
     "show_vendor": false,
     "show_cart_note": false,
-    "checkout_logo_image": "shopify:\/\/shop_images\/logo-black_b81b6368-ae00-4c16-a179-401645ade453.png",
+    "checkout_logo_image": "shopify://shop_images/logo-black_b81b6368-ae00-4c16-a179-401645ade453.png",
     "checkout_logo_position": "center",
     "checkout_sidebar_background_color": "#fff",
     "checkout_heading_font": "Helvetica Neue",
@@ -176,8 +176,8 @@
         ],
         "settings": {
           "color_scheme": "background-1",
-          "logo": "shopify:\/\/shop_images\/logo-black.png",
-          "logo_width": 220,
+          "logo": "shopify://shop_images/logo-black.png",
+          "logo_width": 240,
           "logo_position": "middle-center",
           "menu": "main-menu",
           "menu_type_desktop": "mega",
@@ -195,7 +195,7 @@
           "2c8d6534-e3b0-4837-abd5-8aa1c9e9314a": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/imnot-white-ratio.png",
+              "image": "shopify://shop_images/imnot-white-ratio.png",
               "image_width": 200,
               "alignment": ""
             }
@@ -218,7 +218,7 @@
             "type": "text",
             "settings": {
               "heading": "",
-              "subtext": "<p>Together we are everything. <br\/><\/p>"
+              "subtext": "<p>Together we are everything. <br/></p>"
             }
           },
           "footer-1": {
@@ -256,7 +256,7 @@
       "main-password-header": {
         "type": "main-password-header",
         "settings": {
-          "logo": "shopify:\/\/shop_images\/logo-black.png",
+          "logo": "shopify://shop_images/logo-black.png",
           "logo_max_width": 190,
           "color_scheme": "background-1"
         }
@@ -273,7 +273,7 @@
     ],
     "blocks": {
       "15079184273603081885": {
-        "type": "shopify:\/\/apps\/order-value-booster\/blocks\/app_embed\/4125375e-37c8-4137-949d-c4e1a3aac572",
+        "type": "shopify://apps/order-value-booster/blocks/app_embed/4125375e-37c8-4137-949d-c4e1a3aac572",
         "disabled": false,
         "settings": {
         }
@@ -461,7 +461,7 @@
               "type": "text",
               "settings": {
                 "heading": "Our mission",
-                "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+                "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
               }
             }
           },
