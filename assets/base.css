@@ -2419,6 +2419,10 @@ input[type='checkbox'] {
     width: 2.25rem;
   }
 
+  .header__icon--cart {
+    margin-right: 0;
+  }
+
   .header__icon,
   .header__icon--cart .icon {
     height: 2.75rem;
