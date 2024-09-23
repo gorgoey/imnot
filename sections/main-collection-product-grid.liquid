@@ -138,15 +138,16 @@
     </div>
   </div>
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var endlessScroll = new Ajaxinate({
-      container: '#Imnot-Loops',
-      pagination: '#Imnot-Paginate'
+{%  comment  %} 
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var endlessScroll = new Ajaxinate({
+        container: '#Imnot-Loops',
+        pagination: '#Imnot-Paginate'
+      });
     });
-  });
-</script>
+  </script>
+ {% endcomment %} 
 {% schema %}
 {
   "name": "t:sections.main-collection-product-grid.name",
