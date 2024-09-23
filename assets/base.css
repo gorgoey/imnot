@@ -2377,7 +2377,7 @@ input[type='checkbox'] {
 
 .header__icon {
   color: rgb(var(--color-foreground));
-  margin: 0 1rem;
+  margin: 0 .5rem;
 }
 
 .header__icon span {
@@ -2402,8 +2402,8 @@ input[type='checkbox'] {
 
 .header__icon,
 .header__icon--cart .icon {
-  height: 3.25rem;
-  width: 3.25rem;
+  height: 3rem;
+  width: 3rem;
   padding: 0;
   fill: #000;
 }
