@@ -2426,7 +2426,7 @@ input[type='checkbox'] {
   }
 
   .header__icon.header__icon--cart {
-    height: 3rem;
+    height: 2.75rem;
     width: 3rem;
     padding: .1rem;
     fill: #000;
