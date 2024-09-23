@@ -132,7 +132,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 @media (max-width: 767px) {
   .imnot_body .menu-drawer__menu-item {
     font-size: 1.25rem;
-    font-weight: bold;
+    font-weight: 900;
   }
 }
 
