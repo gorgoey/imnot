@@ -2,6 +2,7 @@
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'ajaxinate.min.js' | asset_url | script_tag }}
 
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
@@ -148,61 +149,11 @@
   </div>
 </div>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const pagination = document.getElementById('product-pagination');
-      if (!pagination) return;
-
-      const loadMoreProducts = () => {
-        const nextLink = document.querySelector('#product-pagination .load-more');
-        if (!nextLink) return;
-
-        const nextPage = parseInt(pagination.getAttribute('data-page')) + 1;
-        const totalPages = parseInt(pagination.getAttribute('data-pages'));
-
-        if (nextPage > totalPages) return;
-
-        fetch(nextLink.href)
-          .then(response => response.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            const newProducts = doc.querySelectorAll('.product-grid-item');
-            const productGrid = document.querySelector('.product-grid');
-
-            newProducts.forEach(product => {
-              productGrid.appendChild(product);
-            });
-
-            // Update pagination to the new page
-            pagination.setAttribute('data-page', nextPage);
-
-            // Remove load more button if no more pages
-            const newPagination = doc.getElementById('product-pagination');
-            if (newPagination) {
-              pagination.innerHTML = newPagination.innerHTML;
-            } else {
-              pagination.remove();
-            }
-          });
-      };
-
-      let throttle;
-      window.addEventListener('scroll', () => {
-        if (throttle) {
-          clearTimeout(throttle);
-        }
-
-        throttle = setTimeout(() => {
-          const scrollPosition = window.innerHeight + window.scrollY;
-          const pageHeight = document.body.offsetHeight;
-
-          if (scrollPosition >= pageHeight - 500) {
-            loadMoreProducts();
-          }
-        }, 200);
-      });
-    });
-  </script>
+  const endlessCollection = new Ajaxinate({
+    container: '#product-grid',
+    pagination: '.infinite_next',
+  });
+</script>
 {% schema %}
 {
   "name": "t:sections.main-collection-product-grid.name",
