@@ -2414,6 +2414,22 @@ input[type='checkbox'] {
 }
 
 @media screen and (max-width: 989px) {
+  .header__icon .icon {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+
+  .header__icon,
+  .header__icon--cart .icon {
+    height: 2.75rem;
+    width: 2.75rem;
+    padding: .25rem;
+    fill: #000;
+  }
+
+}
+
+@media screen and (max-width: 989px) {
   menu-drawer ~ .header__icons .header__icon--account {
     display: none;
   }
