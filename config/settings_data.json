@@ -171,6 +171,9 @@
       },
       "header": {
         "type": "header",
+        "custom_css": [
+          ".header-wrapper {box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;}"
+        ],
         "settings": {
           "color_scheme": "background-1",
           "logo": "shopify:\/\/shop_images\/logo-black.png",
