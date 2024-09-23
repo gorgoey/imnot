@@ -129,6 +129,12 @@ details[open].menu-opening > .menu-drawer__submenu {
   font-size: 1.8rem;
 }
 
+@media (max-width: 767px) {
+  .imnot_body .menu-drawer__menu-item {
+    font-size: 1.25rem;
+  }
+}
+
 .no-js .menu-drawer__menu-item {
   font-size: 1.6rem;
 }
