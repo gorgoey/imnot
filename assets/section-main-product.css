@@ -1265,10 +1265,18 @@ a.product__text {
   .product__title h1 {
     font-size: 3rem;
   }
+
+  .collection__title h2 {
+    font-size: 3rem;
+  }
 }
 
 @media screen and (max-width: 989px) {
   .product__title h1 {
+    font-size: 1.5rem;
+  }
+
+  .collection__title h2 {
     font-size: 1.5rem;
   }
 }
