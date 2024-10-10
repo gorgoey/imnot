@@ -15,12 +15,12 @@
         "slide_bw493F": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/S6_0658_5a4a0e1a-3efc-44d3-a7c8-317cf17cc411.jpg",
+            "image": "shopify://shop_images/S6_0658_5a4a0e1a-3efc-44d3-a7c8-317cf17cc411.jpg",
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
             "button_label": "click",
-            "link": "shopify:\/\/collections\/basic-wears",
+            "link": "shopify://collections/basic-wears",
             "button_style_secondary": false,
             "box_align": "middle-center",
             "show_text_box": false,
@@ -53,12 +53,12 @@
         "slide_L8NqMc": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/S6_0540.jpg",
+            "image": "shopify://shop_images/S6_0540.jpg",
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
             "button_label": "click",
-            "link": "shopify:\/\/collections\/basic-wears",
+            "link": "shopify://collections/basic-wears",
             "button_style_secondary": false,
             "box_align": "middle-center",
             "show_text_box": true,
@@ -71,12 +71,12 @@
         "slide_bqB3KD": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/S3_0263.jpg",
+            "image": "shopify://shop_images/S3_0263.jpg",
             "heading": "Image slide",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
             "button_label": "Button label",
-            "link": "shopify:\/\/collections\/basic-wears",
+            "link": "shopify://collections/basic-wears",
             "button_style_secondary": false,
             "box_align": "middle-center",
             "show_text_box": true,
@@ -89,12 +89,12 @@
         "slide_ARCUmK": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/S2_0215.jpg",
+            "image": "shopify://shop_images/S2_0215.jpg",
             "heading": "Image slide",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
             "button_label": "Button label",
-            "link": "shopify:\/\/collections\/basic-wears",
+            "link": "shopify://collections/basic-wears",
             "button_style_secondary": false,
             "box_align": "middle-center",
             "show_text_box": true,
@@ -110,6 +110,7 @@
         "slide_bqB3KD",
         "slide_ARCUmK"
       ],
+      "disabled": true,
       "custom_css": [
         "@media (min-width: 768px) {slideshow-component {display: none; }}"
       ],
@@ -121,6 +122,58 @@
         "change_slides_speed": 5,
         "show_text_below": false,
         "accessibility_info": ""
+      }
+    },
+    "image_banner_WrFMLf": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_Wg4M7k": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_q47fCa": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "buttons_8XDRgB": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_Wg4M7k",
+        "text_q47fCa",
+        "buttons_8XDRgB"
+      ],
+      "custom_css": [
+        "@media (min-width: 768px) {.banner {display: none; }}"
+      ],
+      "settings": {
+        "video_background": false,
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/31c3b04128564f85ae23b3cc9a0ccbc4.webm",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
     "featured_collection": {
@@ -197,7 +250,7 @@
       "settings": {
         "heading": "",
         "heading_size": "h1",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "description": "",
         "full_width": false,
         "color_scheme": "background-1",
@@ -212,7 +265,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -221,7 +274,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -230,7 +283,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -263,7 +316,7 @@
       "type": "apps",
       "blocks": {
         "917b921e-8e95-4cc8-b75a-a4ab7aaf02e8": {
-          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
           "settings": {
             "title": "",
             "title_color": "",
@@ -285,6 +338,7 @@
   "order": [
     "slideshow_Ugq4ML",
     "slideshow_rRkxHn",
+    "image_banner_WrFMLf",
     "featured_collection",
     "collage",
     "video",
