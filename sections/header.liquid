@@ -721,6 +721,19 @@
   }
 
   customElements.define('sticky-header', StickyHeader);
+
+  window.addEventListener('scroll', function() {
+    var scrollPosition = window.scrollY; // Get current scroll position
+    var element = document.querySelector('.header'); // Select your element
+    
+    if (scrollPosition > 0) {
+      // Add class when the user scrolls down
+      element.classList.add('scrolled');
+    } else {
+      // Remove class when the user scrolls back to the top
+      element.classList.remove('scrolled');
+    }
+  });
 {% endjavascript %}
 
 <script type="application/ld+json">
