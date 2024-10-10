@@ -129,25 +129,28 @@
       "blocks": {
         "heading_Wg4M7k": {
           "type": "heading",
+          "disabled": true,
           "settings": {
-            "heading": "Image banner",
+            "heading": "",
             "heading_size": "h1"
           }
         },
         "text_q47fCa": {
           "type": "text",
+          "disabled": true,
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text": "",
             "text_style": "body"
           }
         },
         "buttons_8XDRgB": {
           "type": "buttons",
+          "disabled": true,
           "settings": {
-            "button_label_1": "Button label",
+            "button_label_1": "",
             "button_link_1": "",
             "button_style_secondary_1": false,
-            "button_label_2": "Button label",
+            "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
           }
