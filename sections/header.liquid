@@ -734,6 +734,17 @@
       element.classList.remove('scrolled');
     }
   });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if the element with class 'video-background' exists
+    var videoBackground = document.querySelector('.video-background');
+    var header = document.querySelector('header'); // Select the header element
+
+    if (videoBackground && header) {
+      // Add the class 'has-VideoBanner' to the header
+      header.classList.add('has-VideoBanner');
+    }
+  });
 {% endjavascript %}
 
 <script type="application/ld+json">

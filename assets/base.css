@@ -3007,3 +3007,14 @@ details-disclosure > details {
 .imnot_body .section+.section {
   margin-top: 0;
 }
+
+
+@media (max-width: 767px) {
+  .header.has-VideoBanner {
+    position: absolute;
+  }
+
+  .header.has-Videobanner.scrolled {
+    position: relative;
+  }
+}
