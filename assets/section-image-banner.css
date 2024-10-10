@@ -8,6 +8,11 @@
   text-align: center;
 }
 
+.video-background .video-background-link {
+  display: block;
+  width: 100%;
+}
+
 @media only screen and (max-width: 749px) {
   .banner--content-align-mobile-right .banner__box {
     text-align: right;
