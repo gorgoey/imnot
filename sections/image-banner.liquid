@@ -33,7 +33,7 @@
     {%- if section.settings.video_background -%}
         <div class="banner__media media video-background">
             <video autoplay muted loop playsinline id="imnotVideo">
-                <source src="" type="video/webm">
+                <source src="{{ section.settings.video_url }}" type="video/webm">
             </video>
         </div>
     {%- endif -%}
