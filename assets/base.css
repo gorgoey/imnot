@@ -3010,11 +3010,11 @@ details-disclosure > details {
 
 
 @media (max-width: 767px) {
-  .header.has-VideoBanner {
+  .has-Videobanner .header {
     position: absolute;
   }
 
-  .header.has-Videobanner.scrolled {
+  .has-Videobanner .header.scrolled {
     position: relative;
   }
 }
