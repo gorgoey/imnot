@@ -167,6 +167,7 @@
       "settings": {
         "video_background": true,
         "video_url": "https://cdn.shopify.com/videos/c/o/v/31c3b04128564f85ae23b3cc9a0ccbc4.webm",
+        "video_url_link": "shopify://collections/basic-wears",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "adapt_height_first_image": false,
