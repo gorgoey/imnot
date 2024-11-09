@@ -51,7 +51,6 @@
         },
         "slide_A99zFd": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Artboard_83_2x-100.jpg",
             "heading": "Image slide",
@@ -74,7 +73,6 @@
         "slide_bw493F",
         "slide_A99zFd"
       ],
-      "disabled": true,
       "custom_css": [
         "@media (max-width: 767px) {slideshow-component {display: none; }}"
       ],
