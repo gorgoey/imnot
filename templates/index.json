@@ -53,6 +53,7 @@
           "type": "slide",
           "disabled": true,
           "settings": {
+            "image": "shopify://shop_images/Artboard_83_2x-100.jpg",
             "heading": "Image slide",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
@@ -206,61 +207,6 @@
       ],
       "settings": {
         "image": "shopify://shop_images/000061.jpg",
-        "video_background": false,
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/31c3b04128564f85ae23b3cc9a0ccbc4.webm",
-        "video_url_link": "shopify://collections/basic-wears",
-        "video_cover": "shopify://shop_images/videoframe_12480.png",
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "adapt_height_first_image": true,
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
-    "image_banner_8RhmAT": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_MLiAMY": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "",
-            "heading_size": "h1"
-          }
-        },
-        "text_bKJB7K": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "",
-            "text_style": "body"
-          }
-        },
-        "buttons_ngTX7L": {
-          "type": "buttons",
-          "disabled": true,
-          "settings": {
-            "button_label_1": "",
-            "button_link_1": "",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_MLiAMY",
-        "text_bKJB7K",
-        "buttons_ngTX7L"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/Artboard_83_2x-100.jpg",
         "video_background": false,
         "video_url": "https://cdn.shopify.com/videos/c/o/v/31c3b04128564f85ae23b3cc9a0ccbc4.webm",
         "video_url_link": "shopify://collections/basic-wears",
@@ -439,7 +385,6 @@
     "slideshow_Ugq4ML",
     "slideshow_rRkxHn",
     "image_banner_WrFMLf",
-    "image_banner_8RhmAT",
     "featured_collection",
     "collage",
     "video",
