@@ -120,11 +120,13 @@
         "text_q47fCa",
         "buttons_8XDRgB"
       ],
+      "disabled": true,
       "custom_css": [
         "@media (min-width: 768px) {.banner {display: none; }}"
       ],
       "settings": {
-        "image": "shopify://shop_images/000061.jpg",
+        "image": "shopify://shop_images/Artboard_83_2x-100.jpg",
+        "image_2": "shopify://shop_images/Artboard_83_2x-100.jpg",
         "video_background": false,
         "video_url": "https://cdn.shopify.com/videos/c/o/v/31c3b04128564f85ae23b3cc9a0ccbc4.webm",
         "video_url_link": "shopify://collections/basic-wears",
