@@ -20,6 +20,11 @@
           "settings": {
             "content": "<p>Machine wash cold<br/>Do not tumble dry<br/>Do not bleach<br/>Do not iron<br/>Do not dry clean</p>"
           }
+        },
+        "collapsible-row-0": {
+          "settings": {
+            "content": "<p>80% cotton, 18% polyester, 2% elastane</p>"
+          }
         }
       }
     }
