@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "slideshow_Ugq4ML": {
@@ -15,7 +15,7 @@
         "slide_bw493F": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/S6_0658_5a4a0e1a-3efc-44d3-a7c8-317cf17cc411.jpg",
+            "image": "shopify://shop_images/Artboard_83_2x-100.jpg",
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
