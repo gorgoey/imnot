@@ -12,5 +12,16 @@
   "context": {
     "market": "international"
   },
-  "sections": {}
+  "sections": {
+    "main": {
+      "settings": {},
+      "blocks": {
+        "collapsible-row-3": {
+          "settings": {
+            "content": "<p>Machine wash cold<br/>Do not tumble dry<br/>Do not bleach<br/>Do not iron<br/>Do not dry clean</p>"
+          }
+        }
+      }
+    }
+  }
 }
