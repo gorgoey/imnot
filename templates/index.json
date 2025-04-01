@@ -73,6 +73,7 @@
         "slide_bw493F",
         "slide_A99zFd"
       ],
+      "disabled": true,
       "custom_css": [
         "@media only screen and (max-width: 991px) {body {background-color: lightblue; }}"
       ],
@@ -89,43 +90,6 @@
     "slideshow_aBpfnj": {
       "type": "slideshow",
       "blocks": {
-        "slide_8KYtxQ": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "shopify://collections/basic-wears",
-            "button_style_secondary": true,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_hFARE4": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Artboard_83_2x-100.jpg",
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "click",
-            "link": "shopify://collections/basic-wears",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center"
-          }
-        },
         "slide_gCtMeH": {
           "type": "slide",
           "settings": {
@@ -146,8 +110,6 @@
         }
       },
       "block_order": [
-        "slide_8KYtxQ",
-        "slide_hFARE4",
         "slide_gCtMeH"
       ],
       "settings": {
