@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "colors_solid_button_labels": "#ffffff",
@@ -145,10 +145,10 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "10% OFF FIRST ORDER WITH CODE “ HELLO ”",
+              "text": "The sweet skirt and mini sweet skirt in polka dot cream will be available for pre-order starting April 3rd at 8 PM (Thailand time, UTC+7)",
               "text_alignment": "center",
               "color_scheme": "accent-1",
-              "link": ""
+              "link": "shopify://products/sweet-skirt-midi-length-polka-dot-in-cream"
             }
           },
           "9351c1e9-ca8c-499a-ab7c-546d89267368": {
@@ -166,14 +166,11 @@
           "announcement-bar-0",
           "9351c1e9-ca8c-499a-ab7c-546d89267368"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "header": {
         "type": "header",
-        "custom_css": [
-
-        ],
+        "custom_css": [],
         "settings": {
           "color_scheme": "background-1",
           "logo": "shopify://shop_images/logo-black.png",
@@ -268,15 +265,12 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "15079184273603081885": {
         "type": "shopify://apps/order-value-booster/blocks/app_embed/4125375e-37c8-4137-949d-c4e1a3aac572",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       }
     }
   },
@@ -420,8 +414,7 @@
           "block_order": [
             "announcement-bar-0"
           ],
-          "settings": {
-          }
+          "settings": {}
         },
         "header": {
           "type": "header",
