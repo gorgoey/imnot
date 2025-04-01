@@ -52,7 +52,7 @@
           "settings": {
             "heading": "Materials",
             "icon": "leather",
-            "content": "<p>95% COTTON / 5% SPANDEX</p>",
+            "content": "<p>Body: Polyester<br/>Lining: Sheer Silk</p>",
             "page": ""
           }
         },
@@ -61,7 +61,7 @@
           "settings": {
             "heading": "Care Instructions",
             "icon": "heart",
-            "content": "<ul><li>Machine wash Delicate </li><li>Wash below 30 </li><li>Wash with similar color </li><li>Do not bleach </li><li>Tumble dry low temp</li><li>Iron low temp</li></ul>",
+            "content": "<p>Dry Clean Only <br/>Do not iron, only steam from back side if needed <br/>Delicate fabric, please take extra care</p>",
             "page": ""
           }
         },
