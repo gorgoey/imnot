@@ -93,7 +93,8 @@
         "slide_Lm8Qdn"
       ],
       "custom_css": [
-        "@media only screen and (max-width: 991px) {body {background-color: lightblue; }}"
+        "slideshow-component {display: block;}",
+        "@media only screen and (max-width: 991px) {slideshow-component {display: none; }}"
       ],
       "settings": {
         "layout": "full_bleed",
@@ -129,6 +130,10 @@
       },
       "block_order": [
         "slide_gCtMeH"
+      ],
+      "custom_css": [
+        "slideshow-component {display: none;}",
+        "@media only screen and (max-width: 991px) {slideshow-component {display: block; }}"
       ],
       "settings": {
         "layout": "full_bleed",
