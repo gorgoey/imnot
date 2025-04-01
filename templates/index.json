@@ -66,14 +66,32 @@
             "color_scheme": "background-1",
             "text_alignment_mobile": "center"
           }
+        },
+        "slide_Lm8Qdn": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
         }
       },
       "block_order": [
         "slide_pR3qHr",
         "slide_bw493F",
-        "slide_A99zFd"
+        "slide_A99zFd",
+        "slide_Lm8Qdn"
       ],
-      "disabled": true,
       "custom_css": [
         "@media only screen and (max-width: 991px) {body {background-color: lightblue; }}"
       ],
@@ -93,7 +111,7 @@
         "slide_gCtMeH": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Artboard_44_4x-100_add81080-0e64-4bf6-8746-643564a750e4.jpg",
+            "image": "shopify://shop_images/Artboard_44_4x-100.jpg",
             "heading": "Image slide",
             "heading_size": "h2",
             "subheading": "Tell your brand's story through images",
@@ -101,7 +119,7 @@
             "link": "shopify://collections/basic-wears",
             "button_style_secondary": true,
             "box_align": "middle-center",
-            "show_text_box": true,
+            "show_text_box": false,
             "text_alignment": "center",
             "image_overlay_opacity": 0,
             "color_scheme": "background-1",
