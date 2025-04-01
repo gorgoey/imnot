@@ -73,6 +73,9 @@
         "slide_bw493F",
         "slide_A99zFd"
       ],
+      "custom_css": [
+        "@media only screen and (max-width: 991px) {body {background-color: lightblue; }}"
+      ],
       "settings": {
         "layout": "full_bleed",
         "slide_height": "adapt_image",
@@ -153,7 +156,7 @@
         "slider_visual": "counter",
         "auto_rotate": true,
         "change_slides_speed": 5,
-        "show_text_below": false,
+        "show_text_below": true,
         "accessibility_info": ""
       }
     },
