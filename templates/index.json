@@ -83,6 +83,80 @@
         "accessibility_info": ""
       }
     },
+    "slideshow_aBpfnj": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_8KYtxQ": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "shopify://collections/basic-wears",
+            "button_style_secondary": true,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_hFARE4": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Artboard_83_2x-100.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "click",
+            "link": "shopify://collections/basic-wears",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_gCtMeH": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Artboard_44_4x-100_add81080-0e64-4bf6-8746-643564a750e4.jpg",
+            "heading": "Image slide",
+            "heading_size": "h2",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "shopify://collections/basic-wears",
+            "button_style_secondary": true,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_8KYtxQ",
+        "slide_hFARE4",
+        "slide_gCtMeH"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "counter",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "show_text_below": false,
+        "accessibility_info": ""
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "disabled": true,
@@ -244,6 +318,7 @@
   },
   "order": [
     "slideshow_Ugq4ML",
+    "slideshow_aBpfnj",
     "featured_collection",
     "collage",
     "video",
