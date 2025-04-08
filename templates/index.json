@@ -103,7 +103,9 @@
         "auto_rotate": true,
         "change_slides_speed": 5,
         "show_text_below": false,
-        "accessibility_info": ""
+        "accessibility_info": "Mobile",
+        "show_on_desktop": true,
+        "show_on_mobile": true
       }
     },
     "slideshow_aBpfnj": {
@@ -142,7 +144,9 @@
         "auto_rotate": true,
         "change_slides_speed": 5,
         "show_text_below": true,
-        "accessibility_info": ""
+        "accessibility_info": "",
+        "show_on_desktop": true,
+        "show_on_mobile": true
       }
     },
     "featured_collection": {
@@ -288,7 +292,14 @@
           "settings": {
             "title": "",
             "title_color": "",
+            "title_size": 0,
             "alignment": "center",
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
             "background_color": "",
             "feed_id": "",
             "html_area": ""
