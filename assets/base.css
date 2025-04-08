@@ -3018,3 +3018,14 @@ details-disclosure > details {
     position: relative;
   }
 }
+
+
+.hide-desktop {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .hide-desktop {
+    display: none;
+  }
+}
