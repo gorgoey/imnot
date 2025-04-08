@@ -28,10 +28,10 @@
 
 {% assign slideshow_classes = '' %}
 {% unless section.settings.show_on_desktop %}
-  {% assign slideshow_classes = slideshow_classes | append: ' hide-desktop' %}
+  {% assign slideshow_classes = slideshow_classes | append: ' show-desktop' %}
 {% endunless %}
 {% unless section.settings.show_on_mobile %}
-  {% assign slideshow_classes = slideshow_classes | append: ' hide-mobile' %}
+  {% assign slideshow_classes = slideshow_classes | append: ' show-mobile' %}
 {% endunless %}
 
 <div class="slideshow-wrapper{{ slideshow_classes }}">
