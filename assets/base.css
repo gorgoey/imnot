@@ -3020,12 +3020,16 @@ details-disclosure > details {
 }
 
 
-.hide-desktop {
-  display: block;
+/* Hide on mobile */
+@media screen and (max-width: 767px) {
+  .hide-mobile {
+    display: none !important;
+  }
 }
 
-@media (min-width: 768px) {
+/* Hide on desktop */
+@media screen and (min-width: 768px) {
   .hide-desktop {
-    display: none;
+    display: none !important;
   }
 }
