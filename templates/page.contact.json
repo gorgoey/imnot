@@ -1,1 +1,132 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":8,"padding_bottom":4}},"2a9d7d32-d189-4f58-a68c-1d79bca7b8bf":{"type":"rich-text","blocks":{"template--15972447158445__2a9d7d32-d189-4f58-a68c-1d79bca7b8bf-16728486360367e7ee-0":{"type":"heading","settings":{"heading":"<p>Contact us<\/p>","heading_size":"h2"}},"template--15972447158445__2a9d7d32-d189-4f58-a68c-1d79bca7b8bf-16728486360367e7ee-1":{"type":"text","settings":{"text":"<p>HELLO, AM I THE ONE YOU'RELOOKING FOR?<br\/>Send us a message using <br\/>the form below, or contact us at:<br\/>imnotamorningperson.official@gmail.com<\/p>"}}},"block_order":["template--15972447158445__2a9d7d32-d189-4f58-a68c-1d79bca7b8bf-16728486360367e7ee-0","template--15972447158445__2a9d7d32-d189-4f58-a68c-1d79bca7b8bf-16728486360367e7ee-1"],"settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"background-1","full_width":true,"padding_top":40,"padding_bottom":52}},"form":{"type":"contact-form","settings":{"heading":"","heading_size":"h2","color_scheme":"background-1","padding_top":8,"padding_bottom":4}},"489c6d5c-df2c-4e99-a6ee-84b7dec814ba":{"type":"rich-text","blocks":{"2ce6944c-9915-4159-8564-15648fe63815":{"type":"text","settings":{"text":"<p><br\/>199\/151 ZERENE Village Tha Kham, Kanchana Pisek Road , <br\/>Tha Kham Subdistrict,<br\/> Bang Khun Thian District, <br\/>Bangkok 10150<br\/>📞+66999824653<\/p>"}}},"block_order":["2ce6944c-9915-4159-8564-15648fe63815"],"settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"background-1","full_width":true,"padding_top":40,"padding_bottom":52}},"843d2097-b54f-4002-b3db-f229ecb2f710":{"type":"collage","disabled":true,"blocks":{"template--15972447158445__843d2097-b54f-4002-b3db-f229ecb2f710-16728482574827e41e-0":{"type":"video","settings":{"video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","description":"Describe the video","image_padding":false}},"template--15972447158445__843d2097-b54f-4002-b3db-f229ecb2f710-16728482574827e41e-1":{"type":"product","settings":{"product":"","second_image":false}},"template--15972447158445__843d2097-b54f-4002-b3db-f229ecb2f710-16728482574827e41e-2":{"type":"collection","settings":{"collection":""}}},"block_order":["template--15972447158445__843d2097-b54f-4002-b3db-f229ecb2f710-16728482574827e41e-0","template--15972447158445__843d2097-b54f-4002-b3db-f229ecb2f710-16728482574827e41e-1","template--15972447158445__843d2097-b54f-4002-b3db-f229ecb2f710-16728482574827e41e-2"],"settings":{"heading":"Multimedia collage","heading_size":"h1","desktop_layout":"left","mobile_layout":"collage","card_styles":"product-card-wrapper","color_scheme":"background-1","padding_top":36,"padding_bottom":36}}},"order":["main","2a9d7d32-d189-4f58-a68c-1d79bca7b8bf","form","489c6d5c-df2c-4e99-a6ee-84b7dec814ba","843d2097-b54f-4002-b3db-f229ecb2f710"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 8,
+        "padding_bottom": 4
+      }
+    },
+    "2a9d7d32-d189-4f58-a68c-1d79bca7b8bf": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15972447158445__2a9d7d32-d189-4f58-a68c-1d79bca7b8bf-16728486360367e7ee-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Contact us</p>",
+            "heading_size": "h2"
+          }
+        },
+        "template--15972447158445__2a9d7d32-d189-4f58-a68c-1d79bca7b8bf-16728486360367e7ee-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>HELLO, AM I THE ONE YOU'RE LOOKING FOR?<br/>Send us a message using <br/>the form below, or contact us at:<br/>imnotamorningperson.official@gmail.com</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15972447158445__2a9d7d32-d189-4f58-a68c-1d79bca7b8bf-16728486360367e7ee-0",
+        "template--15972447158445__2a9d7d32-d189-4f58-a68c-1d79bca7b8bf-16728486360367e7ee-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "color_scheme": "background-1",
+        "padding_top": 8,
+        "padding_bottom": 4
+      }
+    },
+    "489c6d5c-df2c-4e99-a6ee-84b7dec814ba": {
+      "type": "rich-text",
+      "blocks": {
+        "2ce6944c-9915-4159-8564-15648fe63815": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "2ce6944c-9915-4159-8564-15648fe63815"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "843d2097-b54f-4002-b3db-f229ecb2f710": {
+      "type": "collage",
+      "blocks": {
+        "template--15972447158445__843d2097-b54f-4002-b3db-f229ecb2f710-16728482574827e41e-0": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "description": "Describe the video",
+            "image_padding": false
+          }
+        },
+        "template--15972447158445__843d2097-b54f-4002-b3db-f229ecb2f710-16728482574827e41e-1": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "second_image": false
+          }
+        },
+        "template--15972447158445__843d2097-b54f-4002-b3db-f229ecb2f710-16728482574827e41e-2": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15972447158445__843d2097-b54f-4002-b3db-f229ecb2f710-16728482574827e41e-0",
+        "template--15972447158445__843d2097-b54f-4002-b3db-f229ecb2f710-16728482574827e41e-1",
+        "template--15972447158445__843d2097-b54f-4002-b3db-f229ecb2f710-16728482574827e41e-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Multimedia collage",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "2a9d7d32-d189-4f58-a68c-1d79bca7b8bf",
+    "form",
+    "489c6d5c-df2c-4e99-a6ee-84b7dec814ba",
+    "843d2097-b54f-4002-b3db-f229ecb2f710"
+  ]
+}

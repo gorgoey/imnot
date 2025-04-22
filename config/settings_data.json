@@ -204,6 +204,13 @@
               "menu": "footer"
             }
           },
+          "text_bLnArd": {
+            "type": "text",
+            "settings": {
+              "heading": "Heading",
+              "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+            }
+          },
           "3687a9d2-5052-46ea-83d5-8f773b5ec555": {
             "type": "link_list",
             "settings": {
@@ -230,6 +237,7 @@
         "block_order": [
           "2c8d6534-e3b0-4837-abd5-8aa1c9e9314a",
           "17ec154e-6838-4396-a22b-9b564586580d",
+          "text_bLnArd",
           "3687a9d2-5052-46ea-83d5-8f773b5ec555",
           "footer-2",
           "footer-1"
