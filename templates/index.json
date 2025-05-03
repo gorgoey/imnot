@@ -52,7 +52,7 @@
         "slide_A99zFd": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Artboard_44_4x-100_add81080-0e64-4bf6-8746-643564a750e4.jpg",
+            "image": "shopify://shop_images/000035490012.jpg",
             "heading": "Image slide",
             "heading_size": "h2",
             "subheading": "Tell your brand's story through images",
@@ -111,7 +111,7 @@
         "slide_gCtMeH": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Artboard_44_4x-100_17e4b043-f46c-40c6-8c16-10796287efaa.jpg",
+            "image": "shopify://shop_images/Artboard_4_1_2x-100.jpg",
             "heading": "Image slide",
             "heading_size": "h2",
             "subheading": "Tell your brand's story through images",
@@ -286,11 +286,11 @@
           "settings": {
             "title": "",
             "title_color": "",
-            "title_size": 0,
+            "title_size_v2": 0,
             "alignment": "center",
-            "margin_top": 0,
-            "margin_bottom": 0,
-            "margin_sides": 0,
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
             "show_instagram_link": false,
             "link_alignment": "left",
             "link_color": "#000000",
