@@ -145,7 +145,7 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "GET 10% DISCOUNT ON YOUR FIRST PURCHASE! USE CODE: HELLO",
+              "text": "GET 10% DISCOUNT ON YOUR FIRST PURCHASE! USE CODE: GOODMORNING",
               "text_alignment": "center",
               "color_scheme": "accent-1",
               "link": "shopify://collections/basic-wears"
