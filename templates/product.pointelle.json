@@ -61,7 +61,7 @@
           "settings": {
             "heading": "Care Instructions",
             "icon": "heart",
-            "content": "<ul><li>Cold machine wash with like colours</li><li>Do not bleach</li><li>Do not tumble dry</li><li>Cool iron </li><li>Do not dry clean </li></ul>",
+            "content": "<p>Hand wash cold, lay flat to dry</p>",
             "page": ""
           }
         },
