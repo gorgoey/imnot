@@ -12,6 +12,23 @@
     "slideshow_Ugq4ML": {
       "type": "slideshow",
       "blocks": {
+        "slide_G7j7JR": {
+          "type": "slide",
+          "settings": {
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_pR3qHr": {
           "type": "slide",
           "disabled": true,
@@ -87,6 +104,7 @@
         }
       },
       "block_order": [
+        "slide_G7j7JR",
         "slide_pR3qHr",
         "slide_bw493F",
         "slide_A99zFd",
