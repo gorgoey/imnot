@@ -145,7 +145,7 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "GET 10% DISCOUNT ON YOUR FIRST PURCHASE! USE CODE: GOODMORNING",
+              "text": "BLACKFRIDAY 20% OFF EVERTHING CODE: BLACKFRIDAY 24 Nov, 12:00 AM – 28 Nov, 11:30 PM (GMT+7 / Thailand Time)",
               "text_alignment": "center",
               "color_scheme": "accent-1",
               "link": "shopify://collections/basic-wears"
@@ -271,22 +271,6 @@
         "type": "shopify://apps/order-value-booster/blocks/app_embed/4125375e-37c8-4137-949d-c4e1a3aac572",
         "disabled": false,
         "settings": {}
-      },
-      "17630519961281411954": {
-        "type": "shopify://apps/wishlist-plus/blocks/wishlist-app-embed/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
-        "disabled": false,
-        "settings": {
-          "storefront_layout_enabled": false,
-          "storefront_layout_primary_bg_color": "#000000",
-          "storefront_layout_primary_text_color": "#ffffff",
-          "storefront_layout_secondary_bg_color": "#F4F8FE",
-          "storefront_layout_secondary_text_color": "#333333",
-          "storefront_layout_ui_border_radius": 6,
-          "storefront_layout_notification_position": "left",
-          "storefront_layout_action_popup_position": "left",
-          "storefront_layout_drawer_position": "left",
-          "storefront_layout_as_section_page": ""
-        }
       }
     }
   },
