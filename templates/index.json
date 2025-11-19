@@ -18,6 +18,8 @@
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/bf-desktop.webp",
+        "banner_link": "shopify://collections/basic-wears",
+        "banner_link_new_tab": false,
         "video_background": false,
         "video_url": "",
         "video_url_link": "shopify://collections/basic-wears",
@@ -40,6 +42,8 @@
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/bf-mobile.webp",
+        "banner_link": "shopify://collections/basic-wears",
+        "banner_link_new_tab": false,
         "video_background": false,
         "video_url": "",
         "video_url_link": "shopify://collections/basic-wears",
