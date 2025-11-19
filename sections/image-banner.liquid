@@ -36,6 +36,12 @@
   }
 {%- endstyle -%}
 
+{% if section.settings.banner_link != blank %}
+  <a href="{{ section.settings.banner_link }}"
+     {% if section.settings.banner_link_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+     class="banner-link-wrapper">
+{% endif %}
+
 <div id="Banner-{{ section.id }}"   
     class="banner
     banner--content-align-{{ section.settings.desktop_content_alignment }}
@@ -143,6 +149,10 @@
   </div>
 </div>
 
+{% if section.settings.banner_link != blank %}
+  </a>
+{% endif %}
+
 {% schema %}
 {
   "name": "t:sections.image-banner.name",
@@ -158,6 +168,18 @@
         "type": "image_picker",
         "id": "image_2",
         "label": "t:sections.image-banner.settings.image_2.label"
+    },
+    {
+      "type": "url",
+      "id": "banner_link",
+      "label": "Banner link (optional)",
+      "info": "Banner Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "banner_link_new_tab",
+      "label": "Open link in new tab",
+      "default": false
     },
     {
         "type": "checkbox",
