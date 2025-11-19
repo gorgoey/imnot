@@ -12,7 +12,8 @@
     "image_banner_DBLHXk": {
       "type": "image-banner",
       "custom_css": [
-        "@media and screen"
+        "@media and screen (min-width: 750px) {.banner.desktop {display: block; }}",
+        "@media and screen (max-width: 749px) {.banner.desktop {display: none; }}"
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
@@ -44,7 +45,7 @@
         "image_height": "medium",
         "adapt_height_first_image": true,
         "desktop_content_position": "middle-center",
-        "show_text_box": true,
+        "show_text_box": false,
         "desktop_content_alignment": "center",
         "color_scheme": "background-1",
         "mobile_content_alignment": "center",
