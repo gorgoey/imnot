@@ -3044,6 +3044,7 @@ details-disclosure > details {
 
 .announcement-bar {
   transition: all 0.2s ease;
+  width: 100%;
 }
 
 .announcement-bar.announcement-bar--sticky {
