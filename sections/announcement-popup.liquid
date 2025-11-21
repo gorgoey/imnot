@@ -1,0 +1,212 @@
+{% if section.settings.enable_popup and section.settings.popup_image != blank %}
+  <style>
+    #popup-overlay-{{ section.id }} {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: none; /* เริ่มต้นซ่อนไว้ แล้วค่อยให้ JS เปิด */
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #popup-box-{{ section.id }} {
+      background: black;
+      padding: 0;
+      border-radius: 8px;
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+
+    #popup-box-{{ section.id }} img {
+      display: block;
+      width: 100%;
+      max-width: 750px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    #popup-close-{{ section.id }} {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #000;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #fff;
+      z-index: 2;
+    }
+
+    @media screen and (min-width: 992px) {
+      #popup-box-{{ section.id }} {
+        width: {{ section.settings.desktop_width }}%;
+        max-width: {{ section.settings.desktop_width }}%;
+        max-height: 80%;
+      }
+    }
+
+    @media screen and (max-width: 991px) {
+      #popup-box-{{ section.id }} {
+        width: {{ section.settings.mobile_width }}%;
+        max-width: {{ section.settings.mobile_width }}% !important;
+        max-height: 80%;
+      }
+    }
+  </style>
+
+  <div id="popup-overlay-{{ section.id }}" class="announcement-popup-overlay">
+    <div id="popup-box-{{ section.id }}">
+      <button id="popup-close-{{ section.id }}">&times;</button>
+
+      {% if section.settings.popup_link != blank %}
+        <a
+          href="{{ section.settings.popup_link }}"
+          {% if section.settings.open_new_tab %}
+            target="_blank" rel="noopener noreferrer"
+          {% endif %}
+        >
+      {% endif %}
+
+      {{ section.settings.popup_image
+        | image_url: width: 1200
+        | image_tag:
+          loading: 'lazy',
+          alt: section.settings.popup_alt | escape
+      }}
+
+      {% if section.settings.popup_link != blank %}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const overlay = document.getElementById('popup-overlay-{{ section.id }}');
+      const closeBtn = document.getElementById('popup-close-{{ section.id }}');
+      if (!overlay || !closeBtn) return;
+
+      {% if section.settings.show_once_per_session %}
+        if (window.sessionStorage.getItem('announcement_popup_closed_{{ section.id }}')) {
+          return;
+        }
+      {% endif %}
+
+      const delayMs = {{ section.settings.show_delay | default: 0 }} * 1000;
+
+      setTimeout(function () {
+        overlay.style.display = 'flex';
+      }, delayMs);
+
+      function closePopup() {
+        overlay.style.display = 'none';
+        {% if section.settings.show_once_per_session %}
+          window.sessionStorage.setItem('announcement_popup_closed_{{ section.id }}', 'true');
+        {% endif %}
+      }
+
+      closeBtn.addEventListener('click', function () {
+        closePopup();
+      });
+
+      {% if section.settings.close_on_overlay %}
+        overlay.addEventListener('click', function (e) {
+          if (e.target === overlay) {
+            closePopup();
+          }
+        });
+      {% endif %}
+    });
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Announcement popup",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_popup",
+      "label": "Enable popup",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "popup_image",
+      "label": "Popup image"
+    },
+    {
+      "type": "text",
+      "id": "popup_alt",
+      "label": "Image alt text",
+      "default": "Announcement popup"
+    },
+    {
+      "type": "url",
+      "id": "popup_link",
+      "label": "Popup link URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_new_tab",
+      "label": "Open link in new tab",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "desktop_width",
+      "min": 20,
+      "max": 60,
+      "step": 1,
+      "unit": "%",
+      "label": "Desktop popup width",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "mobile_width",
+      "min": 60,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Mobile popup width",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "show_delay",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "Delay before showing popup (seconds)",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "show_once_per_session",
+      "label": "Show once per browser session",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "close_on_overlay",
+      "label": "Allow click outside popup to close",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement popup"
+    }
+  ]
+}
+{% endschema %}
