@@ -3047,7 +3047,7 @@ details-disclosure > details {
 }
 
 .announcement-bar.announcement-bar--sticky {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 40;
 }
