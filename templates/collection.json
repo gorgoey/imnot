@@ -23,7 +23,7 @@
         "products_per_page": 24,
         "columns_desktop": 4,
         "image_ratio": "adapt",
-        "show_facet_filters": false,
+        "show_facet_filters": true,
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
