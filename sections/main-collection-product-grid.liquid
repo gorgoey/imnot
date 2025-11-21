@@ -46,6 +46,11 @@
   {%- if section.settings.show_facet_filters == false -%}
     {%- assign facet_enable_sorting = false -%}
   {%- endif -%}
+  <div class="page-width collection-header">
+    <h1 class="collection-title h1">
+      {{ collection.title }}
+    </h1>
+  </div>
 
   {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
   {%- if facet_enable_sorting
