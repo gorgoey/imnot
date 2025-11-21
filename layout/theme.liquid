@@ -286,6 +286,28 @@
         pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
         playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
       }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var bar = document.querySelector('.js-announcement-bar');
+        if (!bar) return;
+
+        // เก็บตำแหน่งเดิมตอนโหลด (ระยะจากบนสุดของหน้า)
+        var initialOffsetTop = bar.getBoundingClientRect().top + window.scrollY;
+
+        function handleScroll() {
+          // ถ้า scroll ลงมามากกว่าตำแหน่งเดิม => เข้า sticky mode
+          if (window.scrollY > initialOffsetTop) {
+            bar.classList.add('announcement-bar--sticky');
+          } else {
+            // กลับมาระดับเดิม => mode ปกติ
+            bar.classList.remove('announcement-bar--sticky');
+          }
+        }
+
+        // ฟัง event scroll
+        window.addEventListener('scroll', handleScroll);
+      });
+
     </script>
 
     {%- if settings.predictive_search_enabled -%}

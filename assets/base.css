@@ -3041,3 +3041,13 @@ details-disclosure > details {
     display: none !important;
   }
 }
+
+.announcement-bar {
+  transition: all 0.2s ease;
+}
+
+.announcement-bar.announcement-bar--sticky {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
