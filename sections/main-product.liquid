@@ -1961,10 +1961,10 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var mq = window.matchMedia('(max-width: 749px)');
-      if (!mq.matches) return;
+      if (!mq.matches) return; // ทำเฉพาะ mobile
 
-      var sliderComponent = document.querySelector('#GalleryViewer-{{ section.id }}');
-      var sliderList      = document.querySelector('#Slider-Gallery-{{ section.id }}');
+      var sliderComponent = document.getElementById('GalleryViewer-{{ section.id }}');
+      var sliderList      = document.getElementById('Slider-Gallery-{{ section.id }}');
 
       if (!sliderComponent || !sliderList) return;
 
@@ -1977,78 +1977,55 @@
 
       function updateSliderHeight() {
         if (!mq.matches) {
-          // ถ้าไม่ใช่มือถือแล้ว ปล่อยให้ theme จัดการเอง
+          // ถ้าออกจาก mobile แล้ว ปล่อยให้ theme จัดการเอง
           sliderComponent.style.height = '';
+          sliderList.style.height = '';
           return;
         }
 
         var active = getActiveSlide();
         if (!active) return;
 
-        // หา media หลักใน slide (รูป/วิดีโอ/โมเดล)
-        var img =
-          active.querySelector('img') ||
-          active.querySelector('video') ||
-          active.querySelector('model-viewer') ||
-          active.querySelector('iframe');
-
-        if (!img) return;
-
-        // ถ้าเป็นรูปภาพ: ใช้สัดส่วนจริงของรูป = naturalHeight / naturalWidth
-        if (img.tagName === 'IMG') {
-          if (!img.naturalWidth || !img.naturalHeight) {
-            img.addEventListener(
-              'load',
-              function () {
-                updateSliderHeight();
-              },
-              { once: true }
-            );
-            return;
-          }
-
-          var ratio = img.naturalHeight / img.naturalWidth;
-          var width = sliderComponent.clientWidth;
-          var height = width * ratio;
-
+        var height = active.offsetHeight;
+        if (height > 0) {
           sliderComponent.style.height = height + 'px';
-        } else {
-          // ถ้าเป็น video / model / iframe วัดจากขนาดจริง
-          var rect = img.getBoundingClientRect();
-          if (rect.height > 0) {
-            sliderComponent.style.height = rect.height + 'px';
-          }
+          sliderList.style.height      = height + 'px';
         }
+
+        // เผื่อรูปใน slide ยังโหลดไม่เสร็จ
+        active.querySelectorAll('img, video, iframe, model-viewer').forEach(function (el) {
+          if (el.tagName === 'IMG' && !el.complete) {
+            el.addEventListener('load', function () {
+              updateSliderHeight();
+            }, { once: true });
+          }
+        });
       }
 
-      // init ครั้งแรก
+      // init แรก
       updateSliderHeight();
 
-      // เวลา resize จอ
+      // resize หน้าจอ
       window.addEventListener('resize', function () {
         updateSliderHeight();
       });
 
-      // เวลา click ปุ่ม next/prev หรือ thumbnail
-      var clickable = document.querySelectorAll(
-        '#GalleryViewer-{{ section.id }} .slider-button, #GalleryViewer-{{ section.id }} .thumbnail'
-      );
-      clickable.forEach(function (btn) {
+      // click ปุ่ม next/prev + thumbnail
+      document.querySelectorAll(
+        '#GalleryViewer-{{ section.id }} .slider-button, #GalleryThumbnails-{{ section.id }} .thumbnail'
+      ).forEach(function (btn) {
         btn.addEventListener('click', function () {
-          // รอ slider เปลี่ยน slide เสร็จ
-          setTimeout(updateSliderHeight, 250);
+          setTimeout(updateSliderHeight, 250); // รอ slider เปลี่ยน slide เสร็จ
         });
       });
 
-      // รองรับ swipe: ดูการเปลี่ยน class is-active
+      // รองรับ swipe: ดู class is-active เปลี่ยน
+      var slides = sliderList.querySelectorAll('.slider__slide');
       var observer = new MutationObserver(function () {
         updateSliderHeight();
       });
-
-      observer.observe(sliderList, {
-        subtree: true,
-        attributes: true,
-        attributeFilter: ['class'],
+      slides.forEach(function (slide) {
+        observer.observe(slide, { attributes: true, attributeFilter: ['class'] });
       });
     });
   </script>
