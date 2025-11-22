@@ -1951,3 +1951,78 @@
   ]
 }
 {% endschema %}
+{%- if product.media.size > 0 -%}
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var mql = window.matchMedia('(max-width: 749px)');
+      if (!mql.matches) return;
+
+      // slider-component หลักบนมือถือ
+      var sliderComponent = document.querySelector('#GalleryViewer-{{ section.id }}');
+      var sliderList      = document.querySelector('#Slider-Gallery-{{ section.id }}');
+
+      if (!sliderComponent || !sliderList) return;
+
+      function getActiveSlide() {
+        return sliderList.querySelector('.slider__slide.is-active') || sliderList.querySelector('.slider__slide');
+      }
+
+      function updateSliderHeight() {
+        var active = getActiveSlide();
+        if (!active) return;
+
+        var media =
+          active.querySelector('.media') ||
+          active.querySelector('img, video, model-viewer, iframe, .deferred-media__poster');
+
+        if (!media) {
+          sliderComponent.style.height = '';
+          return;
+        }
+
+        var rect   = media.getBoundingClientRect();
+        var height = rect.height;
+
+        if (height > 0) {
+          sliderComponent.style.height = height + 'px';
+        }
+
+        var img = media.tagName === 'IMG' ? media : media.querySelector && media.querySelector('img');
+        if (img && !img.complete) {
+          img.addEventListener('load', function() {
+            updateSliderHeight();
+          }, { once: true });
+        }
+      }
+
+      updateSliderHeight();
+
+      window.addEventListener('resize', function() {
+        if (!mql.matches) {
+          sliderComponent.style.height = '';
+          return;
+        }
+        updateSliderHeight();
+      });
+
+
+      var clickable = sliderComponent.querySelectorAll('.slider-button, .thumbnail');
+      clickable.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          setTimeout(updateSliderHeight, 200);
+        });
+      });
+
+      
+      var observer = new MutationObserver(function() {
+        updateSliderHeight();
+      });
+
+      observer.observe(sliderList, {
+        attributes: true,
+        subtree: true,
+        attributeFilter: ['class']
+      });
+    });
+  </script>
+{%- endif -%}
