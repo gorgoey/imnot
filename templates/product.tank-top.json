@@ -104,7 +104,7 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "enable_slider_buttons": true,
+        "enable_slider_buttons": false,
         "enable_mobile_adaptive_media": true,
         "media_position": "left",
         "gallery_layout": "stacked",
