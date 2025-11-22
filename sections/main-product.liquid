@@ -1953,75 +1953,96 @@
 {% endschema %}
 {%- if product.media.size > 0 -%}
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var mql = window.matchMedia('(max-width: 749px)');
-      if (!mql.matches) return;
+    document.addEventListener('DOMContentLoaded', function () {
+      var mq = window.matchMedia('(max-width: 749px)');
+      if (!mq.matches) return;
 
-      // slider-component หลักบนมือถือ
       var sliderComponent = document.querySelector('#GalleryViewer-{{ section.id }}');
       var sliderList      = document.querySelector('#Slider-Gallery-{{ section.id }}');
 
       if (!sliderComponent || !sliderList) return;
 
       function getActiveSlide() {
-        return sliderList.querySelector('.slider__slide.is-active') || sliderList.querySelector('.slider__slide');
+        return (
+          sliderList.querySelector('.slider__slide.is-active') ||
+          sliderList.querySelector('.slider__slide')
+        );
       }
 
       function updateSliderHeight() {
+        if (!mq.matches) {
+          // ถ้าไม่ใช่มือถือแล้ว ปล่อยให้ theme จัดการเอง
+          sliderComponent.style.height = '';
+          return;
+        }
+
         var active = getActiveSlide();
         if (!active) return;
 
-        var media =
-          active.querySelector('.media') ||
-          active.querySelector('img, video, model-viewer, iframe, .deferred-media__poster');
+        // หา media หลักใน slide (รูป/วิดีโอ/โมเดล)
+        var img =
+          active.querySelector('img') ||
+          active.querySelector('video') ||
+          active.querySelector('model-viewer') ||
+          active.querySelector('iframe');
 
-        if (!media) {
-          sliderComponent.style.height = '';
-          return;
-        }
+        if (!img) return;
 
-        var rect   = media.getBoundingClientRect();
-        var height = rect.height;
+        // ถ้าเป็นรูปภาพ: ใช้สัดส่วนจริงของรูป = naturalHeight / naturalWidth
+        if (img.tagName === 'IMG') {
+          if (!img.naturalWidth || !img.naturalHeight) {
+            img.addEventListener(
+              'load',
+              function () {
+                updateSliderHeight();
+              },
+              { once: true }
+            );
+            return;
+          }
 
-        if (height > 0) {
+          var ratio = img.naturalHeight / img.naturalWidth;
+          var width = sliderComponent.clientWidth;
+          var height = width * ratio;
+
           sliderComponent.style.height = height + 'px';
-        }
-
-        var img = media.tagName === 'IMG' ? media : media.querySelector && media.querySelector('img');
-        if (img && !img.complete) {
-          img.addEventListener('load', function() {
-            updateSliderHeight();
-          }, { once: true });
+        } else {
+          // ถ้าเป็น video / model / iframe วัดจากขนาดจริง
+          var rect = img.getBoundingClientRect();
+          if (rect.height > 0) {
+            sliderComponent.style.height = rect.height + 'px';
+          }
         }
       }
 
+      // init ครั้งแรก
       updateSliderHeight();
 
-      window.addEventListener('resize', function() {
-        if (!mql.matches) {
-          sliderComponent.style.height = '';
-          return;
-        }
+      // เวลา resize จอ
+      window.addEventListener('resize', function () {
         updateSliderHeight();
       });
 
-
-      var clickable = sliderComponent.querySelectorAll('.slider-button, .thumbnail');
-      clickable.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          setTimeout(updateSliderHeight, 200);
+      // เวลา click ปุ่ม next/prev หรือ thumbnail
+      var clickable = document.querySelectorAll(
+        '#GalleryViewer-{{ section.id }} .slider-button, #GalleryViewer-{{ section.id }} .thumbnail'
+      );
+      clickable.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          // รอ slider เปลี่ยน slide เสร็จ
+          setTimeout(updateSliderHeight, 250);
         });
       });
 
-      
-      var observer = new MutationObserver(function() {
+      // รองรับ swipe: ดูการเปลี่ยน class is-active
+      var observer = new MutationObserver(function () {
         updateSliderHeight();
       });
 
       observer.observe(sliderList, {
-        attributes: true,
         subtree: true,
-        attributeFilter: ['class']
+        attributes: true,
+        attributeFilter: ['class'],
       });
     });
   </script>
