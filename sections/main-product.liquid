@@ -27,7 +27,8 @@
 
     @media screen and (max-width: 749px) {
       #GalleryViewer-{{ section.id }} {
-        overflow: hidden;
+        height: auto;
+        transition: height .3s ease;
       }
     }
   {%- endstyle -%}
@@ -1959,74 +1960,66 @@
 {% endschema %}
 {%- if product.media.size > 0 -%}
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var mq = window.matchMedia('(max-width: 749px)');
-      if (!mq.matches) return; // ทำเฉพาะ mobile
+  document.addEventListener('DOMContentLoaded', function() {
+    var sliderComponent = document.getElementById('GalleryViewer-{{ section.id }}');
+    var sliderList = document.getElementById('Slider-Gallery-{{ section.id }}');
 
-      var sliderComponent = document.getElementById('GalleryViewer-{{ section.id }}');
-      var sliderList      = document.getElementById('Slider-Gallery-{{ section.id }}');
+    if (!sliderComponent || !sliderList) return;
 
-      if (!sliderComponent || !sliderList) return;
+    function getActiveSlide() {
+      return sliderList.querySelector('.slider__slide.is-active') ||
+             sliderList.querySelector('.slider__slide');
+    }
 
-      function getActiveSlide() {
-        return (
-          sliderList.querySelector('.slider__slide.is-active') ||
-          sliderList.querySelector('.slider__slide')
-        );
+    function updateSliderHeight() {
+      // ให้ desktop ใช้ behaviour เดิมของ theme
+      if (window.innerWidth >= 750) {
+        sliderComponent.style.height = '';
+        return;
       }
 
-      function updateSliderHeight() {
-        if (!mq.matches) {
-          // ถ้าออกจาก mobile แล้ว ปล่อยให้ theme จัดการเอง
-          sliderComponent.style.height = '';
-          sliderList.style.height = '';
-          return;
+      var activeSlide = getActiveSlide();
+      if (!activeSlide) return;
+
+      // รอให้ layout อัพเดตนิดนึงก่อนวัด
+      window.requestAnimationFrame(function() {
+        // พยายามหา media ตัวจริงใน slide (รูป / วิดีโอ / iframe ฯลฯ)
+        var media =
+          activeSlide.querySelector('img, video, iframe, model-viewer, .deferred-media') ||
+          activeSlide;
+
+        var h = media.offsetHeight;
+        if (h && h > 0) {
+          sliderComponent.style.height = h + 'px';
         }
-
-        var active = getActiveSlide();
-        if (!active) return;
-
-        var height = active.offsetHeight;
-        if (height > 0) {
-          sliderComponent.style.height = height + 'px';
-          sliderList.style.height      = height + 'px';
-        }
-
-        // เผื่อรูปใน slide ยังโหลดไม่เสร็จ
-        active.querySelectorAll('img, video, iframe, model-viewer').forEach(function (el) {
-          if (el.tagName === 'IMG' && !el.complete) {
-            el.addEventListener('load', function () {
-              updateSliderHeight();
-            }, { once: true });
-          }
-        });
-      }
-
-      // init แรก
-      updateSliderHeight();
-
-      // resize หน้าจอ
-      window.addEventListener('resize', function () {
-        updateSliderHeight();
       });
+    }
 
-      // click ปุ่ม next/prev + thumbnail
-      document.querySelectorAll(
-        '#GalleryViewer-{{ section.id }} .slider-button, #GalleryThumbnails-{{ section.id }} .thumbnail'
-      ).forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          setTimeout(updateSliderHeight, 250); // รอ slider เปลี่ยน slide เสร็จ
-        });
-      });
+    // initial load
+    updateSliderHeight();
 
-      // รองรับ swipe: ดู class is-active เปลี่ยน
-      var slides = sliderList.querySelectorAll('.slider__slide');
-      var observer = new MutationObserver(function () {
-        updateSliderHeight();
-      });
-      slides.forEach(function (slide) {
-        observer.observe(slide, { attributes: true, attributeFilter: ['class'] });
-      });
+    // ภาพโหลดเสร็จแล้วค่อยอัพเดต height อีกรอบ
+    sliderList.querySelectorAll('img').forEach(function(img) {
+      if (img.complete) return;
+      img.addEventListener('load', updateSliderHeight);
     });
-  </script>
+
+    // เวลา resize / เปลี่ยน orientation
+    window.addEventListener('resize', updateSliderHeight);
+
+    // เวลาเปลี่ยนสไลด์ด้วยปุ่ม arrow หรือ thumbnail
+    sliderComponent.addEventListener('click', function(e) {
+      if (
+        e.target.closest('.slider-button') ||
+        e.target.closest('.thumbnail') ||
+        e.target.closest('.thumbnail-list__item')
+      ) {
+        setTimeout(updateSliderHeight, 250);
+      }
+    });
+
+    // ถ้า theme ปล่อย custom event อะไรเกี่ยวกับ slide change ไว้ เราลองฟังไว้เลย
+    sliderComponent.addEventListener('slideChanged', updateSliderHeight);
+  });
+</script>
 {%- endif -%}
