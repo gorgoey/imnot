@@ -12,6 +12,13 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "text_FLV8Ma": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {}
@@ -82,6 +89,7 @@
         }
       },
       "block_order": [
+        "text_FLV8Ma",
         "title",
         "price",
         "variant_picker",
@@ -96,6 +104,7 @@
       ],
       "settings": {
         "enable_sticky_info": true,
+        "enable_slider_buttons": false,
         "media_position": "left",
         "gallery_layout": "stacked",
         "media_size": "large",
