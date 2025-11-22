@@ -12,6 +12,13 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "text_iD3pjR": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {}
@@ -82,6 +89,7 @@
         }
       },
       "block_order": [
+        "text_iD3pjR",
         "title",
         "price",
         "variant_picker",
