@@ -387,3 +387,26 @@ slider-component.slider-component-full-width {
 .slider-button--prev:not([disabled]):hover .icon {
   transform: rotate(90deg) scale(1.1);
 }
+
+
+@media screen and (max-width: 749px) {
+  .product--mobile-adaptive-media .product__media-list.slider--mobile .product__media-item .media {
+    padding-top: 0 !important;
+    aspect-ratio: auto !important;
+    height: auto !important;
+  }
+
+  .product--mobile-adaptive-media .product__media-list.slider--mobile .product__media-item .media > img,
+  .product--mobile-adaptive-media .product__media-list.slider--mobile .product__media-item .media > video,
+  .product--mobile-adaptive-media .product__media-list.slider--mobile .product__media-item .media > model-viewer,
+  .product--mobile-adaptive-media .product__media-list.slider--mobile .product__media-item .deferred-media__poster button {
+    position: static !important;
+    width: 100%;
+    height: auto !important;
+    object-fit: contain;
+  }
+
+  .product--mobile-adaptive-media .product__media-list.slider--mobile .product__media-item {
+    height: auto !important;
+  }
+}
