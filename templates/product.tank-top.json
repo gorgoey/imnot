@@ -12,6 +12,13 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "text_z9f664": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {}
@@ -82,6 +89,7 @@
         }
       },
       "block_order": [
+        "text_z9f664",
         "title",
         "price",
         "variant_picker",
