@@ -15,7 +15,7 @@
         "text_TJRNW6": {
           "type": "text",
           "settings": {
-            "text": "ven{{ product.vendor }}",
+            "text": "{{ product.vendor }}",
             "text_style": "uppercase"
           }
         },
