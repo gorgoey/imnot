@@ -319,7 +319,9 @@
             >
               {% render 'icon-caret' %}
             </button>
-          </slider-component>
+          </slider-component>          
+        {%- endif -%}
+        {%- if media_count > 0 -%}
           {%- comment -%}
             Mobile Swiper gallery (show only on mobile)
           {%- endcomment -%}
@@ -414,8 +416,7 @@
             <!-- <div class="swiper-button-prev swiper-button-prev-{{ section.id }}"></div>
             <div class="swiper-button-next swiper-button-next-{{ section.id }}"></div> -->
           </div>
-          
-        {%- endif -%}
+          {%- endif -%}
       </media-gallery>
     </div>
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
