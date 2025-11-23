@@ -321,7 +321,7 @@
             </button>
           </slider-component>          
         {%- endif -%}
-        {%- if media_count > 0 -%}
+        {%- if product.media.size > 0 -%}
           {%- comment -%}
             Mobile Swiper gallery (show only on mobile)
           {%- endcomment -%}
@@ -2082,16 +2082,7 @@
         pagination: {
           el: '.swiper-pagination-{{ section.id }}',
           clickable: true
-        },
-        // ถ้าใช้ปุ่ม prev/next ให้ uncomment นี้
-        // navigation: {
-        //   nextEl: '.swiper-button-next-{{ section.id }}',
-        //   prevEl: '.swiper-button-prev-{{ section.id }}',
-        // },
-      });
-
-      swiperInstance.on('imagesReady', function () {
-        swiperInstance.updateAutoHeight(0);
+        }
       });
     }
 
@@ -2103,14 +2094,11 @@
     }
 
     mq.addEventListener('change', function () {
-      if (mq.matches) {
-        initSwiper();
-      } else {
-        destroySwiper();
-      }
+      if (mq.matches) initSwiper();
+      else destroySwiper();
     });
 
-    // init แรก
     initSwiper();
   });
 </script>
+
