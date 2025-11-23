@@ -1,6 +1,6 @@
 <section
   id="MainProduct-{{ section.id }}"
-  class="page-width section-{{ section.id }}-padding{% if section.settings.enable_mobile_adaptive_media %} product--mobile-adaptive-media{% endif %}{% unless section.settings.enable_slider_buttons %} product--no-slider-buttons{% endunless %}"
+  class="main-product page-width section-{{ section.id }}-padding{% if section.settings.enable_mobile_adaptive_media %} product--mobile-adaptive-media{% endif %}{% unless section.settings.enable_slider_buttons %} product--no-slider-buttons{% endunless %}"
   data-section="{{ section.id }}"
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
@@ -46,6 +46,14 @@
         display: block;
         width: 100%;
         height: auto;
+      }
+
+      .main-product.page-width {
+        padding: 0;
+      }
+
+      .product__info-wrapper {
+        padding: 0 1.5rem;
       }
     }
 
