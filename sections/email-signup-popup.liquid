@@ -24,79 +24,81 @@
               </div>
           {%- endif -%}
           <div class="email-popup-content">
-              <h2 class="email-popup-heading">
-              {{ section.settings.heading }}
-              </h2>
-    
-              {%- if section.settings.subheading != blank -%}
-              <p class="email-popup-subheading">
-                  {{ section.settings.subheading }}
-              </p>
-              {%- endif -%}
-    
-              {%- form 'customer', id: 'EmailPopupForm-{{ section.id }}', class: 'email-popup-form newsletter-form' -%}
-              <input type="hidden" name="contact[tags]" value="newsletter">
-    
-              <div class="newsletter-form__field-wrapper">
-                  <div class="field email-popup-field">
-                  <input
-                      id="EmailPopupEmail-{{ section.id }}"
-                      type="email"
-                      name="contact[email]"
-                      class="field__input email-popup-input"
-                      value="{{ form.email }}"
-                      aria-required="true"
-                      autocorrect="off"
-                      autocapitalize="off"
-                      autocomplete="email"
-                      {% if form.errors %}
-                      autofocus
-                      aria-invalid="true"
-                      aria-describedby="EmailPopup-error-{{ section.id }}"
-                      {% elsif form.posted_successfully? %}
-                      aria-describedby="EmailPopup-success-{{ section.id }}"
-                      {% endif %}
-                      placeholder="{{ section.settings.email_placeholder }}"
-                      required
-                  >
-    
-                  <button
-                      type="submit"
-                      class="newsletter-form__button field__button email-popup-button"
-                      name="commit"
-                      aria-label="{{ 'newsletter.button_label' | t }}"
-                  >
-                      {% render 'icon-arrow' %}
-                  </button>
-                  </div>
-    
-                  {%- if form.errors -%}
-                  <small
-                      class="newsletter-form__message form__message email-popup-message"
-                      id="EmailPopup-error-{{ section.id }}"
-                  >
-                      {% render 'icon-error' %}
-                      {{ form.errors.translated_fields['email'] | capitalize }}
-                      {{ form.errors.messages['email'] }}
-                  </small>
+              <div class="email-popup-content-body">                
+                  <h2 class="email-popup-heading">
+                    {{ section.settings.heading }}
+                  </h2>
+                  {%- if section.settings.subheading != blank -%}
+                    <p class="email-popup-subheading">
+                        {{ section.settings.subheading }}
+                    </p>
                   {%- endif -%}
+                  {%- form 'customer', id: 'EmailPopupForm-{{ section.id }}', class: 'email-popup-form newsletter-form' -%}
+                      <input type="hidden" name="contact[tags]" value="newsletter">
+          
+                      <div class="newsletter-form__field-wrapper">
+                          <div class="field email-popup-field">
+                          <input
+                              id="EmailPopupEmail-{{ section.id }}"
+                              type="email"
+                              name="contact[email]"
+                              class="field__input email-popup-input"
+                              value="{{ form.email }}"
+                              aria-required="true"
+                              autocorrect="off"
+                              autocapitalize="off"
+                              autocomplete="email"
+                              {% if form.errors %}
+                              autofocus
+                              aria-invalid="true"
+                              aria-describedby="EmailPopup-error-{{ section.id }}"
+                              {% elsif form.posted_successfully? %}
+                              aria-describedby="EmailPopup-success-{{ section.id }}"
+                              {% endif %}
+                              placeholder="{{ section.settings.email_placeholder }}"
+                              required
+                          >
+              
+                          <button
+                              type="submit"
+                              class="newsletter-form__button field__button email-popup-button"
+                              name="commit"
+                              aria-label="{{ 'newsletter.button_label' | t }}"
+                          >
+                              {% render 'icon-arrow' %}
+                          </button>
+                          </div>
+              
+                          {%- if form.errors -%}
+                          <small
+                              class="newsletter-form__message form__message email-popup-message"
+                              id="EmailPopup-error-{{ section.id }}"
+                          >
+                              {% render 'icon-error' %}
+                              {{ form.errors.translated_fields['email'] | capitalize }}
+                              {{ form.errors.messages['email'] }}
+                          </small>
+                          {%- endif -%}
+                      </div>
+          
+                      {%- if form.posted_successfully? -%}
+                          <p
+                          class="newsletter-form__message newsletter-form__message--success form__message email-popup-message email-popup-message--success"
+                          id="EmailPopup-success-{{ section.id }}"
+                          tabindex="-1"
+                          autofocus
+                          >
+                          {% render 'icon-success' %}
+                          {{ section.settings.success_message }}
+                          </p>
+                      {%- endif -%}
+                  {%- endform -%}
               </div>
     
-              {%- if form.posted_successfully? -%}
-                  <p
-                  class="newsletter-form__message newsletter-form__message--success form__message email-popup-message email-popup-message--success"
-                  id="EmailPopup-success-{{ section.id }}"
-                  tabindex="-1"
-                  autofocus
-                  >
-                  {% render 'icon-success' %}
-                  {{ section.settings.success_message }}
-                  </p>
-              {%- endif -%}
-              {%- endform -%}
-    
-              <div class="email-popup-brand">
-              “ IMNOTAMORNINGPERSON ”<br> BANGKOK
+              <div class="email-popup-footer">
+                  <div class="email-popup-brand">
+                    <img src="https://imnotamorningperson.store/cdn/shop/files/imnot-white-ratio.png" width="150" height="30" />
+                  </div>
               </div>
           </div>
       </div>
@@ -149,7 +151,19 @@
     }
 
     .email-popup-content {
-      padding: 2rem 2rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 2.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .email-popup-footer {
+        margin-left: auto;
+        text-align: right;
     }
 
     .email-popup-heading {
@@ -161,8 +175,8 @@
 
     .email-popup-subheading {
       margin: 0 0 1.75rem;
-      font-size: 0.8rem;
-      line-height: 1.6;
+      font-size: 1.25rem;
+      line-height: 1.75;
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
