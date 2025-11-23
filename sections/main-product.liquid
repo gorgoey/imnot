@@ -28,15 +28,24 @@
     @media screen and (max-width: 749px) {
       #ProductMediaSwiper-{{ section.id }} {
         width: 100%;
-        transition: height .3s ease;
       }
 
       #ProductMediaSwiper-{{ section.id }} .swiper-wrapper {
         width: 100%;
       }
 
-      #ProductMediaSwiper-{{ section.id }} .swiper-slide {
-        width: 100% !important;
+      #ProductMediaSwiper-{{ section.id }} .swiper-slide,
+      #ProductMediaSwiper-{{ section.id }} .product__media-item {
+        width: 100%;
+        margin: 0;
+      }
+
+      #ProductMediaSwiper-{{ section.id }} .product__media-item img,
+      #ProductMediaSwiper-{{ section.id }} .product__media-item video,
+      #ProductMediaSwiper-{{ section.id }} .product__media-item iframe {
+        display: block;
+        width: 100%;
+        height: auto;
       }
     }
 
@@ -224,14 +233,14 @@
           >
             <ul
               id="Slider-Gallery-Mobile-{{ section.id }}"
-              class="product__media-list contains-media grid grid--peek list-unstyled swiper-wrapper"
+              class="product__media-list contains-media list-unstyled swiper-wrapper"
               role="list"
             >
               {%- if product.selected_or_first_available_variant.featured_media != null -%}
                 {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
                 <li
                   id="Slide-Mobile-{{ section.id }}-{{ featured_media.id }}"
-                  class="product__media-item grid__item swiper-slide is-active{% if single_media_visible %} product__media-item--single{% endif %}{% if featured_media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains featured_media.src %} product__media-item--variant{% endif %}"
+                  class="product__media-item swiper-slide is-active{% if single_media_visible %} product__media-item--single{% endif %}{% if featured_media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains featured_media.src %} product__media-item--variant{% endif %}"
                   data-media-id="{{ section.id }}-{{ featured_media.id }}"
                 >
                   {%- assign media_position = 1 -%}
