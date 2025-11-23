@@ -258,6 +258,19 @@
         "show_once_per_session": true,
         "close_on_overlay": true
       }
+    },
+    "email_signup_popup_AmCCW3": {
+      "type": "email-signup-popup",
+      "name": "Email signup popup",
+      "settings": {
+        "enable_popup": true,
+        "heading": "STILL WAKING UP? HERE’S 10% OFF",
+        "subheading": "JOIN OUR EMAIL LIST AND UNLOCK YOUR 10% OFF CODE. STAY AHEAD ON NEW COLLECTIONS, EXCLUSIVE RELEASES, AND EARLY-ACCESS DEALS FROM IMNOTAMORNINGPERSON.COM",
+        "image": "shopify://shop_images/2025-09-02Imnotamorningperson1406.jpg",
+        "email_placeholder": "E-mail Address",
+        "success_message": "You’re in. Check your inbox for your 10% off code.",
+        "delay_seconds": 6
+      }
     }
   },
   "order": [
@@ -270,6 +283,7 @@
     "166839610206fa0dc8",
     "17630524679213280e",
     "custom_liquid_gwMgtH",
-    "announcement_popup_itFTNf"
+    "announcement_popup_itFTNf",
+    "email_signup_popup_AmCCW3"
   ]
 }
