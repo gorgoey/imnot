@@ -43,6 +43,19 @@
     .product-media-swiper.swiper-autoheight .swiper-wrapper {
       flex-wrap: nowrap;
     }
+
+    .product-media-swiper .swiper-pagination .swiper-pagination-bullet {
+      background: #adadadba;
+      border: 1px solid #969494ab;
+    }
+
+    .product-media-swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background: #ffffff;
+    }
+
+    .product-media-swiper.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+      bottom: 40px;
+    }
   {%- endstyle -%}
 
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
