@@ -119,9 +119,8 @@
             assign media_width = 0.45
           endif
         -%}
-
         {%- comment -%}
-          DESKTOP / TABLET: ใช้ slider-component ของ Dawn (ซ่อนบน mobile ด้วย small-hide)
+          DESKTOP / TABLET
         {%- endcomment -%}
         <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter small-hide">
           <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ section.id }}">
@@ -212,7 +211,6 @@
             id="GalleryThumbnails-{{ section.id }}"
             class="thumbnail-slider slider-mobile-gutter quick-add-hidden{% unless section.settings.gallery_layout contains 'thumbnail' %} medium-hide large-up-hide{% endunless %}{% if section.settings.mobile_thumbnails != 'show' %} small-hide{% endif %}{% if media_count <= 3 %} thumbnail-slider--no-slide{% endif %} small-hide"
           >
-            <!-- ... โค้ด thumbnails เดิมของ Dawn ตามที่มีอยู่ ... -->
           </slider-component>
         {%- endif -%}
 
@@ -1926,6 +1924,7 @@
 
       swiperInstance = new Swiper('#ProductMediaSwiper-{{ section.id }}', {
         slidesPerView: 1,
+        spaceBetween: 20,
         autoHeight: true,
         speed: 300,
         loop: false,
