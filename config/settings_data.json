@@ -145,7 +145,7 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "BLACKFRIDAY 20% OFF EVERTHING CODE: BLACKFRIDAY 24 Nov, 12:00 AM – 28 Nov, 11:30 PM (GMT+7)",
+              "text": "BLACKFRIDAY 20% OFF EVERTHING CODE: BLACKFRIDAY | 24 Nov, 12:00 AM – 28 Nov, 11:30 PM (GMT+7)",
               "text_alignment": "center",
               "color_scheme": "accent-1",
               "link": "shopify://collections/basic-wears"
