@@ -20,6 +20,14 @@
     justify-content: center;
   }
 
+  .button-full-width {
+    width: 100%;
+  }
+  
+  .create-account {
+    margin-top: 2em;
+  }
+
 {%- endstyle -%}
 
 <div class="customer login section-{{ section.id }}-padding">
@@ -139,17 +147,20 @@
           </label>
         </div>
 
-        <a href="#recover">
-          {{ 'customer.login_page.forgot_password' | t }}
-        </a>
+
       {%- endif -%}
 
-      <button>
+      <button class="button-full-width">
         {{ 'customer.login_page.sign_in' | t }}
       </button>
 
-      <a href="{{ routes.account_register_url }}">
-        {{ 'customer.login_page.create_account' | t }}
+      <a href="#recover">
+        {{ 'customer.login_page.forgot_password' | t }}
+      </a>
+
+      <a class="create-account" href="{{ routes.account_register_url }}">
+        <span>Don't have an account?</span> 
+        <span>{{ 'customer.login_page.create_account' | t }}</span>
       </a>
       
     {%- endform -%}
