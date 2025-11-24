@@ -24,8 +24,8 @@
     width: 100%;
   }
   
-  .create-account {
-    margin-top: 2em;
+  .create-account-wrapper {
+    margin: 2em auto;
   }
 
 {%- endstyle -%}
@@ -158,10 +158,14 @@
         {{ 'customer.login_page.forgot_password' | t }}
       </a>
 
-      <a class="create-account" href="{{ routes.account_register_url }}">
-        <span>Don't have an account?</span> 
-        <span>{{ 'customer.login_page.create_account' | t }}</span>
-      </a>
+      <div class="create-account-wrapper">
+        <span>
+          Don't have an account? 
+            <a class="create-account" href="{{ routes.account_register_url }}">
+              {{ 'customer.login_page.create_account' | t }}
+            </a>
+        </span>
+      </div>
       
     {%- endform -%}
   </div>
