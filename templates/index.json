@@ -263,7 +263,7 @@
       "type": "email-signup-popup",
       "name": "Email signup popup",
       "settings": {
-        "enable_popup": true,
+        "enable_popup": false,
         "heading": "STILL WAKING UP? HERE’S 10% OFF",
         "subheading": "JOIN OUR EMAIL LIST AND UNLOCK YOUR 10% OFF CODE. STAY AHEAD ON NEW COLLECTIONS, EXCLUSIVE RELEASES, AND EARLY-ACCESS DEALS FROM IMNOTAMORNINGPERSON.COM",
         "image": "shopify://shop_images/2025-09-02Imnotamorningperson1406.jpg",
