@@ -12,6 +12,14 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .customer.register.section-{{ section.id }}-padding {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
 {%- endstyle -%}
 
 <div class="customer register section-{{ section.id }}-padding">
