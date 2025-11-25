@@ -18,7 +18,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: #f9f9f9;
   }
 
   .button-full-width {
@@ -29,10 +28,17 @@
     margin: 2em auto;
   }
 
+  .title-login {
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+  }
+
 {%- endstyle -%}
 
 <div class="customer login section-{{ section.id }}-padding">
-  <h1 id="recover" tabindex="-1">
+  <h1 class="title-login" id="recover" tabindex="-1">
     {{ 'customer.recover_password.title' | t }}
   </h1>
   <div>
@@ -83,7 +89,7 @@
     {%- endform -%}
   </div>
 
-  <h1 id="login" tabindex="-1">
+  <h1 class="title-login" id="login" tabindex="-1">
     {{ 'customer.login_page.title' | t }}
   </h1>
   <div>
