@@ -13,7 +13,6 @@
     }
   }
 
-
   .customer.order.section-{{ section.id }}-padding {
     min-height: 100vh;
   }
@@ -22,8 +21,37 @@
     background: #000;
     color: #fff;
   }
-{%- endstyle -%}
 
+  /* NEW: product image + size style */
+  .order-details__product {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  .order-details__image {
+    flex: 0 0 72px;
+  }
+
+  .order-details__image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+
+  .order-details__info {
+    flex: 1 1 auto;
+  }
+
+  .order-details__size {
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 0.25rem;
+    opacity: 0.8;
+  }
+
+{%- endstyle -%}
 <div class="customer order section-{{ section.id }}-padding">
   <svg style="display:none">
     <symbol id="icon-discount" viewBox="0 0 12 12">
@@ -67,60 +95,74 @@
                 scope="row"
                 data-label="{{ 'customer.order.product' | t }}"
               >
-                <div>
-                  {%- if line_item.url != blank -%}
-                    <a href="{{ line_item.url }}">{{ line_item.title }}</a>
-                  {%- else -%}
-                    <p>{{ line_item.title }}</p>
+                <div class="order-details__product">
+                  {%- if line_item.image -%}
+                    <a href="{{ line_item.url }}" class="order-details__image">
+                      {{ line_item.image | image_url: width: 160 | image_tag: alt: line_item.title }}
+                    </a>
                   {%- endif -%}
-                  {%- assign property_size = line_item.properties | size -%}
-                  {%- unless line_item.selling_plan_allocation == nil and property_size == 0 -%}
-                    <div class="properties">
-                      {%- unless line_item.product.has_only_default_variant -%}
-                        <span>
-                          {{ line_item.variant.title }}
-                        </span>
-                      {%- endunless -%}
-                      {%- unless line_item.selling_plan_allocation == nil -%}
-                        <span>
-                          {{ line_item.selling_plan_allocation.selling_plan.name }}
-                        </span>
-                      {%- endunless -%}
-                      {%- if property_size != 0 -%}
-                        {%- for property in line_item.properties -%}
-                          {% assign property_first_char = property.first | slice: 0 %}
-                          {%- if property.last != blank and property_first_char != '_' -%}
-                            <span>
-                              {{ property.first }}:&nbsp;
-                              {%- if property.last contains '/uploads/' -%}
-                                <a href="{{ property.last }}">{{ property.last | split: '/' | last }}</a>
-                              {%- else -%}
-                                {{ property.last }}
-                              {%- endif -%}
-                            </span>
-                          {%- endif -%}
+
+                  <div class="order-details__info">
+                    {%- if line_item.url != blank -%}
+                      <a href="{{ line_item.url }}">{{ line_item.title }}</a>
+                    {%- else -%}
+                      <p>{{ line_item.title }}</p>
+                    {%- endif -%}
+
+                    {%- if line_item.variant and line_item.variant.option1 -%}
+                      <span class="order-details__size">
+                        Size: {{ line_item.variant.option1 }}
+                      </span>
+                    {%- endif -%}
+
+                    {%- assign property_size = line_item.properties | size -%}
+                    {%- unless line_item.selling_plan_allocation == nil and property_size == 0 -%}
+                      <div class="properties">
+                        {%- unless line_item.product.has_only_default_variant -%}
+                          <span>
+                            {{ line_item.variant.title }}
+                          </span>
+                        {%- endunless -%}
+                        {%- unless line_item.selling_plan_allocation == nil -%}
+                          <span>
+                            {{ line_item.selling_plan_allocation.selling_plan.name }}
+                          </span>
+                        {%- endunless -%}
+                        {%- if property_size != 0 -%}
+                          {%- for property in line_item.properties -%}
+                            {% assign property_first_char = property.first | slice: 0 %}
+                            {%- if property.last != blank and property_first_char != '_' -%}
+                              <span>
+                                {{ property.first }}:&nbsp;
+                                {%- if property.last contains '/uploads/' -%}
+                                  <a href="{{ property.last }}">{{ property.last | split: '/' | last }}</a>
+                                {%- else -%}
+                                  {{ property.last }}
+                                {%- endif -%}
+                              </span>
+                            {%- endif -%}
+                          {%- endfor -%}
+                        {%- endif -%}
+                      </div>
+                    {%- endunless -%}
+
+                    {%- if line_item.line_level_discount_allocations != blank -%}
+                      <ul role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                        {%- for discount_allocation in line_item.line_level_discount_allocations -%}
+                          <li>
+                            <svg aria-hidden="true" focusable="false" viewBox="0 0 12 12">
+                              <use href="#icon-discount" />
+                            </svg>
+                            {{- discount_allocation.discount_application.title }} (-{{ discount_allocation.amount | money -}})
+                          </li>
                         {%- endfor -%}
-                      {%- endif -%}
-                    </div>
-                  {%- endunless -%}
+                      </ul>
+                    {%- endif -%}
 
-                  {%- if line_item.line_level_discount_allocations != blank -%}
-                    <ul role="list" aria-label="{{ 'customer.order.discount' | t }}">
-                      {%- for discount_allocation in line_item.line_level_discount_allocations -%}
-                        <li>
-                          <svg aria-hidden="true" focusable="false" viewBox="0 0 12 12">
-                            <use href="#icon-discount" />
-                          </svg>
-                          {{- discount_allocation.discount_application.title }} (-{{ discount_allocation.amount | money -}})
-                        </li>
-                      {%- endfor -%}
-                    </ul>
-                  {%- endif -%}
-
-                  {%- if line_item.fulfillment -%}
-                    <div class="fulfillment">
-                      {%- assign created_at = line_item.fulfillment.created_at | time_tag: format: 'date' -%}
-                      <span>{{ 'customer.order.fulfilled_at_html' | t: date: created_at }}</span>
+                    {%- if line_item.fulfillment -%}
+                      <div class="fulfillment">
+                        {%- assign created_at = line_item.fulfillment.created_at | time_tag: format: 'date' -%}
+                        <span>{{ 'customer.order.fulfilled_at_html' | t: date: created_at }}</span>
 
                         {%- if line_item.fulfillment.tracking_url -%}
                           <a href="{{ line_item.fulfillment.tracking_url }}">
@@ -131,8 +173,9 @@
                           {{ line_item.fulfillment.tracking_company }}
                           {%- if line_item.fulfillment.tracking_number -%} #{{ line_item.fulfillment.tracking_number }} {%- endif -%}
                         </span>
-                    </div>
-                  {%- endif -%}
+                      </div>
+                    {%- endif -%}
+                  </div>
                 </div>
               </td>
               <td
