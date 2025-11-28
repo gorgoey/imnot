@@ -672,6 +672,9 @@
 
       {%- if shop.customer_accounts_enabled -%}
         <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+          {% comment %}
+            {% render 'icon-account' %}
+          {% endcomment %}
           <span>account</span>
           <span class="visually-hidden">
             {%- liquid
@@ -686,6 +689,7 @@
       {%- endif -%}
 
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+        {% comment %}
         {%- liquid
           if cart == empty
             render 'icon-cart-empty'
@@ -693,6 +697,8 @@
             render 'icon-cart'
           endif
         -%}
+        {% endcomment %}
+        <span>cart</span>
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
           <div class="cart-count-bubble">
