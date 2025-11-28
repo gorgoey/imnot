@@ -2434,7 +2434,7 @@ input[type='checkbox'] {
     width: 3rem;
     padding: .1rem;
     fill: #000;
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
