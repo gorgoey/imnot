@@ -309,6 +309,10 @@ html.no-js .no-js-hidden {
   }
 }
 
+body {
+  text-transform: uppercase;
+}
+
 body,
 .color-background-1,
 .color-background-2,
