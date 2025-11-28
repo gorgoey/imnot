@@ -41,7 +41,7 @@
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/bf-mobile.webp",
+        "image": "shopify://shop_images/Artboard_1_1_2x-100.jpg",
         "banner_link": "shopify://collections/basic-wears",
         "banner_link_new_tab": false,
         "video_background": false,
