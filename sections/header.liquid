@@ -295,8 +295,11 @@
                   </nav>
                   <div class="menu-drawer__utility-links">
                     {%- if shop.customer_accounts_enabled -%}
-                      <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="menu-drawer__account link focus-inset">
+                      <a href="https://account.imnotamorningperson.store/" class="menu-drawer__account link focus-inset">
                         {% render 'icon-account' %}
+                        {%  comment  %}  
+                          {%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}
+                        {% endcomment %}
                         {%- liquid
                           if customer
                             echo 'customer.account_fallback' | t
@@ -691,8 +694,9 @@
       {% endcomment %}
       <div class="header__rightbox">
         {%- if shop.customer_accounts_enabled -%}
-          <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+          <a href="https://account.imnotamorningperson.store/" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
             {% comment %}
+              {%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}
               {% render 'icon-account' %}
             {% endcomment %}
             <span>account</span>
