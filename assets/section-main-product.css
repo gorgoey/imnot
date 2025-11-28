@@ -1262,21 +1262,21 @@ a.product__text {
 
 @media screen and (min-width: 990px) {
   .product__title h1 {
-    font-size: 3rem;
+    font-size: 1.2rem;
   }
 
   .collection__title h2 {
-    font-size: 3rem;
+    font-size: 1.2rem;
   }
 }
 
 @media screen and (max-width: 989px) {
   .product__title h1 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .collection__title h2 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 
