@@ -245,6 +245,7 @@
     },
     "announcement_popup_itFTNf": {
       "type": "announcement-popup",
+      "disabled": true,
       "name": "Announcement popup",
       "settings": {
         "enable_popup": true,
