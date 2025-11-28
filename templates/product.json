@@ -52,7 +52,7 @@
           "settings": {
             "heading": "Materials",
             "icon": "leather",
-            "content": "<p>Poly</p>",
+            "content": "<p>100% cotton</p>",
             "page": ""
           }
         },
@@ -61,7 +61,7 @@
           "settings": {
             "heading": "Care Instructions",
             "icon": "heart",
-            "content": "",
+            "content": "<ul><li>Cold machine wash with like colours</li><li>Do not bleach</li><li>Do not tumble dry</li><li>Cool iron</li><li>Do not dry clean </li></ul>",
             "page": ""
           }
         },
@@ -87,6 +87,7 @@
       "settings": {
         "enable_sticky_info": true,
         "enable_slider_buttons": false,
+        "enable_mobile_adaptive_media": true,
         "media_position": "left",
         "gallery_layout": "stacked",
         "media_size": "large",
