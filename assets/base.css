@@ -2434,14 +2434,7 @@ input[type='checkbox'] {
     width: 3rem;
     padding: .1rem;
     fill: #000;
-  }
-
-  .header__icon.header__icon--search .icon {
-
-  }
-
-  .header__icon.header__icon--cart .icon {
-
+    text-decoration: underline;
   }
 }
 
