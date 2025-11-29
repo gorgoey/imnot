@@ -58,6 +58,13 @@
   text-align: right;
 }
 
+@media screen and (max-width: 989px) {
+  .imnot_body .ajaxcart__note--terms {
+    text-align: center;
+  }
+}
+
+
 .imnot_body .ajaxcart__note--terms a {
   color: #000;
 }
