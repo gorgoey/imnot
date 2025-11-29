@@ -722,6 +722,11 @@
                   -%}
                   {% endcomment %}
                   <span>cart</span>
+                  <div class="cart-count-bubble">
+                    <span>: </span>
+                    <span aria-hidden="true">{{ cart.item_count }}</span>
+                  </div>
+                  {% comment  %}  
                   <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
                   {%- if cart != empty -%}
                     <div class="cart-count-bubble">
@@ -732,6 +737,7 @@
                       <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
                     </div>
                   {%- endif -%}
+                  {% endcomment %}
                 </a>
       </div>
     </div>
