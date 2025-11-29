@@ -216,6 +216,59 @@
           font-size: 1.2rem;
         }
       }
+
+      /* snow animate*/
+      body {
+        position: relative;
+      }
+
+      body::after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        pointer-events: none;
+
+
+        background-image: url('{{ "snow1.png" | asset_url }}'),url('{{ "snow2.png" | asset_url }}'),url('{{ "snow3.png" | asset_url }}');
+
+
+        background-size: 
+          300px,
+          500px,
+          800px;
+
+        background-repeat: repeat;
+
+        animation: snow 12s linear infinite;
+      }
+
+      @keyframes snow {
+        0% {
+          background-position: 
+            0px 0px,
+            0px 0px,
+            0px 0px;
+        }
+        50% {
+          background-position: 
+            300px 500px,
+            200px 300px,
+            100px 150px;
+        }
+        100% {
+          background-position: 
+            600px 1000px,
+            400px 800px,
+            200px 300px;
+        }
+      }
+
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
