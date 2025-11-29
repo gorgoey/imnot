@@ -176,6 +176,8 @@
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+
+
   }
 
   @media screen and (max-width: 989px) {
@@ -195,9 +197,21 @@
       background: #fff;
     }
 
-      .header__heading-logo {
-        max-width: 175px;
-      }
+    .header__heading-logo {
+      max-width: 175px;
+    }
+
+    .header__icons {
+      padding: 0 .25rem;
+    }
+
+    .header__icons span {
+      font-size: 1rem;
+    }
+
+    .cart-count-bubble {
+      font-size: 1rem;
+    }
   }
 {%- endstyle -%}
 
