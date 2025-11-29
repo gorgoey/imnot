@@ -906,7 +906,7 @@ summary::-webkit-details-marker {
 /* component-title */
 .title,
 .title-wrapper-with-link {
-  margin: .25rem 0 2rem;
+  margin: .25rem 0 .5rem;
 }
 
 .title-wrapper-with-link .title {
