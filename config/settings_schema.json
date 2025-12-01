@@ -505,6 +505,10 @@
         "id": "card_color_scheme",
         "options": [
           {
+            "value": "clear-1",
+            "label": "t:sections.all.colors.clear_1.label"
+          },
+          {
             "value": "accent-1",
             "label": "t:sections.all.colors.accent_1.label"
           },
@@ -662,6 +666,14 @@
         "id": "collection_card_color_scheme",
         "options": [
           {
+            "value": "clear-1",
+            "label": "t:sections.all.colors.clear_1.label"
+          },
+          {
+            "value": "clear-1",
+            "label": "t:sections.all.colors.clear_1.label"
+          },
+          {
             "value": "accent-1",
             "label": "t:sections.all.colors.accent_1.label"
           },
@@ -818,6 +830,10 @@
         "type": "select",
         "id": "blog_card_color_scheme",
         "options": [
+          {
+            "value": "clear-1",
+            "label": "t:sections.all.colors.clear_1.label"
+          },
           {
             "value": "accent-1",
             "label": "t:sections.all.colors.accent_1.label"
@@ -1290,6 +1306,10 @@
         "id": "sale_badge_color_scheme",
         "options": [
           {
+            "value": "clear-1",
+            "label": "t:sections.all.colors.clear_1.label"
+          },
+          {
             "value": "accent-1",
             "label": "t:sections.all.colors.accent_1.label"
           },
@@ -1330,6 +1350,10 @@
         "type": "select",
         "id": "accent_icons",
         "options": [
+          {
+            "value": "clear-1",
+            "label": "t:sections.all.colors.clear_1.label"
+          },
           {
             "value": "accent-1",
             "label": "t:sections.all.colors.accent_1.label"
