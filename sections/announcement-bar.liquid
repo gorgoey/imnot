@@ -11,9 +11,11 @@
                 <p class="announcement-bar__message {{ block.settings.text_alignment }}">
                   <span class="announcement-marquee">
                     {{ block.settings.text | escape }}
+                    {% comment %}
                     {%- if block.settings.link != blank -%}
                       {% render 'icon-arrow' %}
                     {%- endif -%}
+                    {% endcomment %}
                   </span>
                 </p>
               </div>
