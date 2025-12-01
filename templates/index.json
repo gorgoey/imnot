@@ -265,11 +265,11 @@
       "name": "Email signup popup",
       "settings": {
         "enable_popup": true,
-        "heading": "STILL WAKING UP? HERE’S 10% OFF",
-        "subheading": "JOIN OUR EMAIL LIST AND UNLOCK YOUR 10% OFF CODE. STAY AHEAD ON NEW COLLECTIONS, EXCLUSIVE RELEASES, AND EARLY-ACCESS DEALS FROM IMNOTAMORNINGPERSON.STORE",
+        "heading": "Psst… 10% off just for you ✧",
+        "subheading": "Sign up to get 10% off and early access to new collections!",
         "image": "shopify://shop_images/51FCF171-39A3-45C5-B0E1-5193DF8FB87C.jpg",
         "email_placeholder": "E-mail",
-        "success_message": "You’re in. Check your inbox for your 10% off code.",
+        "success_message": "You’re in! Check your inbox for your 10% code ✧",
         "delay_seconds": 5
       }
     }
