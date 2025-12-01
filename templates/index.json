@@ -265,7 +265,7 @@
       "name": "Email signup popup",
       "settings": {
         "enable_popup": true,
-        "heading": "Psst… 10% off just for you ✧",
+        "heading": "Psst… 10% off just for you <3",
         "subheading": "Sign up to get 10% off and early access to new collections!",
         "image": "shopify://shop_images/51FCF171-39A3-45C5-B0E1-5193DF8FB87C.jpg",
         "email_placeholder": "E-mail",
