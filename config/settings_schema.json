@@ -23,6 +23,18 @@
       },
       {
         "type": "color",
+        "id": "colors_clear_1",
+        "default": "transparent",
+        "label": "t:settings_schema.colors.settings.colors_clear_1.label",
+        "info": "t:settings_schema.colors.settings.colors_clear_1.info"
+      },
+      {
+        "id": "gradient_clear_1",
+        "label": "t:settings_schema.colors.settings.gradient_accent_1.label",
+        "info": "t:settings_schema.colors.settings.gradient_accent_1.info"
+      },
+      {
+        "type": "color",
         "id": "colors_accent_1",
         "default": "#121212",
         "label": "t:settings_schema.colors.settings.colors_accent_1.label",

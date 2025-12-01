@@ -10,6 +10,8 @@
 {
   "current": {
     "colors_solid_button_labels": "#ffffff",
+    "color_clear_1": "transparent",
+    "gradient_clear_1": "transparent",
     "colors_accent_1": "#121212",
     "gradient_accent_1": "",
     "colors_accent_2": "#878787",
