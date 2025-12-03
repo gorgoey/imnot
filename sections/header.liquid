@@ -314,7 +314,7 @@
                   <div class="menu-drawer__utility-links">
                     {%- if shop.customer_accounts_enabled -%}
                       <a href="https://account.imnotamorningperson.store/" class="menu-drawer__account link focus-inset">
-                        {% render 'icon-account' %}
+
                         {%  comment  %}  
                           {%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}
                         {% endcomment %}
@@ -414,12 +414,7 @@
           <details>
             <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
               <span>
-                <svg class="modal__toggle-open icon icon-search" aria-hidden="true" focusable="false" role="presentation">
-                  <use href="#icon-search">
-                </svg>
-                <svg class="modal__toggle-close icon icon-close" aria-hidden="true" focusable="false" role="presentation">
-                  <use href="#icon-close">
-                </svg>
+                  <span>Search</span>
               </span>
             </summary>
             <div class="search-modal modal__content gradient" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
