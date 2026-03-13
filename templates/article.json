@@ -37,7 +37,8 @@
         "content"
       ],
       "custom_css": [
-        ".article__back,.back-to-blog,.blog-back,.article__link {display: none !important;}"
+        ".article-template a[href*=\"/blogs/\"] {display: none !important;}",
+        ".article-template .link {display: none !important;}"
       ],
       "settings": {}
     }
