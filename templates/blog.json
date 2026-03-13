@@ -11,12 +11,13 @@
   "sections": {
     "main": {
       "type": "main-blog",
+      "disabled": true,
       "custom_css": [
         ".template-blog h1 {font-size: 26px !important; font-weight: 500; letter-spacing: 0.5px; text-transform: none;}"
       ],
       "settings": {
         "layout": "grid",
-        "show_image": true,
+        "show_image": false,
         "image_height": "small",
         "show_date": false,
         "show_author": false,
