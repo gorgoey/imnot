@@ -36,6 +36,9 @@
         "title",
         "content"
       ],
+      "custom_css": [
+        ".article__back,.back-to-blog,.blog-back,.article__link {display: none !important;}"
+      ],
       "settings": {}
     }
   },
