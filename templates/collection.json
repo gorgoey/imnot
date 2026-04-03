@@ -19,6 +19,9 @@
     },
     "image_banner_iGAGjb": {
       "type": "image-banner",
+      "custom_css": [
+        ".collection-hero__title,.collection-title,h1.collection-title {display: none !important;}"
+      ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/Artboard_17_2x-100_fa078ba9-bd04-490c-ad14-579ce78139ba.jpg",
@@ -43,6 +46,9 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "custom_css": [
+        ".collection-hero__title,.collection-title,h1.collection-title {display: none !important;}"
+      ],
       "settings": {
         "products_per_page": 24,
         "columns_desktop": 4,
