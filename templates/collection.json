@@ -44,7 +44,10 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
-      "custom_css": [],
+      "custom_css": [
+        ".card-wrapper .media img {transition: transform 0.3s ease;}",
+        ".card-wrapper:hover .media img {transform: scale(1.03);}"
+      ],
       "settings": {
         "products_per_page": 24,
         "columns_desktop": 4,
