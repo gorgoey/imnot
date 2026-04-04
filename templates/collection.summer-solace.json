@@ -31,7 +31,7 @@
         "show_rating": false,
         "enable_quick_add": false,
         "enable_filtering": false,
-        "show_facet_filters": false,
+        "show_facet_filters": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
         "columns_mobile": "2",
