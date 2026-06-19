@@ -383,7 +383,7 @@
   .card-media-dots {
     position: absolute;
     left: 50%;
-    bottom: -15px;
+    bottom: -20px;
     z-index: 5;
     display: flex;
     gap: 6px;
@@ -391,8 +391,8 @@
   }
 
   .card-media-dot {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     padding: 0;
     border: 0;
     border-radius: 999px;
