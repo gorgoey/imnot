@@ -945,3 +945,31 @@ class ProductRecommendations extends HTMLElement {
 }
 
 customElements.define('product-recommendations', ProductRecommendations);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  document.querySelectorAll("[data-product-card]").forEach((slider) => {
+
+    const wrapper = slider.closest(".card__media");
+
+    if (!wrapper) return;
+
+    const dots = wrapper.querySelectorAll(".card-media-dot");
+
+    dots.forEach((dot, index) => {
+
+      dot.addEventListener("click", () => {
+
+        slider.scrollTo({
+          left: slider.clientWidth * index,
+          behavior: "smooth"
+        });
+
+      });
+
+    });
+
+  });
+
+});
