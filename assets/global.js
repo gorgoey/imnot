@@ -964,6 +964,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!images.length) return;
 
+    /* packshot first */
+    const packshotIndex = 5;
+
+    if (images[packshotIndex]) {
+      const packshot = images.splice(packshotIndex, 1)[0];
+      images.unshift(packshot);
+    }
+
     const desktopMedia = mediaWrapper.querySelector(".card-media-desktop");
 
     if (desktopMedia) {

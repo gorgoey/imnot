@@ -51,7 +51,7 @@
         {%- if card_product.featured_media -%}
           <div class="card__media" 
                data-mobile-gallery='[
-              {%- for media in card_product.media limit: 5 -%}
+              {%- for media in card_product.media -%}
                 {%- if media.media_type == "image" -%}
                   {
                     "src": "{{ media | image_url: width: 533 }}",

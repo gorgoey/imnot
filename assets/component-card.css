@@ -364,7 +364,7 @@
   }
 
   .card__information {
-    padding: 4rem 1rem 2rem;
+    padding: 2rem 1rem 2rem;
   }
 
   .card-media-carousel {
@@ -402,6 +402,8 @@
   }
 
   .card-media-dots {
+    display: none;
+    opacity: 0;
     position: absolute;
     left: 0;
     bottom: -20px;
