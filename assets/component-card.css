@@ -356,11 +356,13 @@
   .card-media-carousel {
     position: absolute;
     inset: 0;
-    display: flex;
-    overflow-x: auto;
+    display: flex !important;
+    overflow-x: scroll !important;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    z-index: 3;
+    touch-action: pan-x;
   }
 
   .card-media-carousel::-webkit-scrollbar {
@@ -368,12 +370,16 @@
   }
 
   .card-media-carousel__slide {
+    position: relative;
     flex: 0 0 100%;
+    min-width: 100%;
     width: 100%;
+    height: 100%;
     scroll-snap-align: start;
   }
 
   .card-media-carousel__slide img {
+    position: static !important;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -399,6 +405,8 @@
     background: rgba(255, 255, 255, 0.55);
     transition: width 0.25s ease, background 0.25s ease;
     border:1px solid #000;
+    z-index: 51;
+        pointer-events: auto;
   }
 
   .card-media-dot.is-active {
