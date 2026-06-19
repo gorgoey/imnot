@@ -1169,7 +1169,7 @@ class ProductRecommendations extends HTMLElement {
 
 customElements.define("product-recommendations", ProductRecommendations);
 
-function initMobileProductCardCarousel() {
+document.addEventListener("DOMContentLoaded", () => {
   const isMobile = window.matchMedia("(max-width: 749px)").matches;
 
   if (!isMobile) return;
@@ -1183,25 +1183,22 @@ function initMobileProductCardCarousel() {
       images = JSON.parse(mediaWrapper.dataset.mobileGallery || "[]");
     } catch (error) {
       console.warn("Invalid mobile gallery JSON", mediaWrapper, error);
+
       return;
     }
 
     if (!images.length) {
       console.warn("Empty mobile gallery", mediaWrapper);
+
       return;
     }
 
+    /* packshot first */
     const packshotIndex = 5;
 
     if (images[packshotIndex]) {
       const packshot = images.splice(packshotIndex, 1)[0];
       images.unshift(packshot);
-    }
-
-    const card = mediaWrapper.closest(".card");
-
-    if (card) {
-      card.classList.add("has-mobile-carousel");
     }
 
     const desktopMedia = mediaWrapper.querySelector(".card-media-desktop");
@@ -1260,33 +1257,26 @@ function initMobileProductCardCarousel() {
       }
     });
 
+    const productGrid = document.querySelector("#product-grid");
+
+    if (productGrid) {
+      const observer = new MutationObserver(() => {
+        initMobileProductCardCarousel();
+      });
+
+      observer.observe(productGrid, {
+        childList: true,
+        subtree: true,
+      });
+    }
+
     mediaWrapper.appendChild(carousel);
     mediaWrapper.appendChild(dots);
+    console.log("Carousel mounted", images.length, mediaWrapper);
     mediaWrapper.dataset.carouselMounted = "true";
 
-    console.log("Carousel mounted", images.length, mediaWrapper);
+    document.addEventListener("DOMContentLoaded", initMobileProductCardCarousel);
+    window.addEventListener("load", initMobileProductCardCarousel);
+    document.addEventListener("shopify:section:load", initMobileProductCardCarousel);
   });
-}
-
-document.addEventListener("DOMContentLoaded", initMobileProductCardCarousel);
-window.addEventListener("load", initMobileProductCardCarousel);
-document.addEventListener("shopify:section:load", initMobileProductCardCarousel);
-
-let carouselObserverTimer;
-
-const productGrid = document.querySelector("#product-grid");
-
-if (productGrid) {
-  const observer = new MutationObserver(() => {
-    clearTimeout(carouselObserverTimer);
-
-    carouselObserverTimer = setTimeout(() => {
-      initMobileProductCardCarousel();
-    }, 300);
-  });
-
-  observer.observe(productGrid, {
-    childList: true,
-    subtree: false,
-  });
-}
+});
