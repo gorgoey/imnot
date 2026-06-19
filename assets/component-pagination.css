@@ -8,14 +8,10 @@
   }
 }
 
-/*.pagination__list {
+.pagination__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}*/ 
-
-.pagination__list{
-  display: none;
 }
 
 .pagination__list > li {
