@@ -189,15 +189,6 @@
   top: calc(var(--border-width) * -1);
 }
 
-.card__heading a::after {
-  bottom: 0;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 1;
-}
 
 .card__heading a:after {
   outline-offset: 0.3rem;
@@ -344,7 +335,21 @@
   display: none;
 }
 
+@media screen and (min-wdith: 750px) {
+  .card__heading a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+}
+
 @media screen and (max-width: 749px) {
+  .card__heading a::after {
+    content: "";
+    z-index: 1;
+  }
+
   .card .card__inner .card__media {
     overflow: visible
   }
@@ -361,8 +366,9 @@
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    z-index: 3;
     touch-action: pan-x;
+    z-index: 10;
+    pointer-events: auto;
   }
 
   .card-media-carousel::-webkit-scrollbar {
@@ -394,6 +400,7 @@
     display: flex;
     gap: 6px;
     transform: translateX(-50%);
+    pointer-events: auto;
   }
 
   .card-media-dot {
@@ -406,7 +413,7 @@
     transition: width 0.25s ease, background 0.25s ease;
     border:1px solid #000;
     z-index: 51;
-        pointer-events: auto;
+    pointer-events: auto;
   }
 
   .card-media-dot.is-active {
