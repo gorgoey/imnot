@@ -335,7 +335,7 @@
   display: none;
 }
 
-@media screen and (min-wdith: 750px) {
+@media screen and (min-width: 750px) {
   .card__heading a::after {
     content: "";
     position: absolute;
