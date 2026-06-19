@@ -375,7 +375,7 @@
   .card-media-dots {
     position: absolute;
     left: 50%;
-    bottom: 12px;
+    bottom: -10px;
     z-index: 5;
     display: flex;
     gap: 6px;
@@ -390,10 +390,11 @@
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.55);
     transition: width 0.25s ease, background 0.25s ease;
+    border:1px solid #000;
   }
 
   .card-media-dot.is-active {
     width: 20px;
-    background: #fff;
+    background: #000;
   }
 }
