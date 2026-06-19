@@ -345,6 +345,9 @@
 }
 
 @media screen and (max-width: 749px) {
+  .card .card__inner .card__media {
+    overflow: visible
+  }
   .card-media-carousel {
     position: absolute;
     inset: 0;
