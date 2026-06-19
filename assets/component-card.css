@@ -403,12 +403,11 @@
 
   .card-media-dots {
     position: absolute;
-    left: 50%;
+    left: 0;
     bottom: -20px;
     z-index: 50;
     display: flex;
     gap: 6px;
-    transform: translateX(-50%);
     pointer-events: auto;
   }
 
