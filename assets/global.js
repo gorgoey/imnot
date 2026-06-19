@@ -946,3 +946,82 @@ class ProductRecommendations extends HTMLElement {
 
 customElements.define('product-recommendations', ProductRecommendations);
 
+document.addEventListener("DOMContentLoaded", () => {
+  const isMobile = window.matchMedia("(max-width: 749px)").matches;
+
+  if (!isMobile) return;
+
+  document.querySelectorAll("[data-mobile-gallery]").forEach((mediaWrapper) => {
+    if (mediaWrapper.dataset.carouselMounted === "true") return;
+
+    let images = [];
+
+    try {
+      images = JSON.parse(mediaWrapper.dataset.mobileGallery || "[]");
+    } catch (error) {
+      return;
+    }
+
+    if (!images.length) return;
+
+    const desktopMedia = mediaWrapper.querySelector(".card-media-desktop");
+
+    if (desktopMedia) {
+      desktopMedia.style.display = "none";
+    }
+
+    const carousel = document.createElement("div");
+    carousel.className = "card-media-carousel";
+
+    images.forEach((image) => {
+      const slide = document.createElement("div");
+      slide.className = "card-media-carousel__slide";
+
+      const img = document.createElement("img");
+      img.src = image.src;
+      img.alt = image.alt || "";
+      img.loading = "lazy";
+      img.className = "motion-reduce";
+
+      slide.appendChild(img);
+      carousel.appendChild(slide);
+    });
+
+    const dots = document.createElement("div");
+    dots.className = "card-media-dots";
+
+    images.forEach((_, index) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = `card-media-dot ${index === 0 ? "is-active" : ""}`;
+      dot.setAttribute("aria-label", `Go to slide ${index + 1}`);
+
+      dot.addEventListener("click", () => {
+        carousel.scrollTo({
+          left: carousel.clientWidth * index,
+          behavior: "smooth",
+        });
+      });
+
+      dots.appendChild(dot);
+    });
+
+    carousel.addEventListener("scroll", () => {
+      const index = Math.round(carousel.scrollLeft / carousel.clientWidth);
+
+      dots.querySelectorAll(".card-media-dot").forEach((dot) => {
+        dot.classList.remove("is-active");
+      });
+
+      const activeDot = dots.querySelectorAll(".card-media-dot")[index];
+
+      if (activeDot) {
+        activeDot.classList.add("is-active");
+      }
+    });
+
+    mediaWrapper.appendChild(carousel);
+    mediaWrapper.appendChild(dots);
+    mediaWrapper.dataset.carouselMounted = "true";
+  });
+});

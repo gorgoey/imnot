@@ -49,7 +49,18 @@
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
         {%- if card_product.featured_media -%}
-          <div class="card__media">
+          <div class="card__media" 
+               data-mobile-gallery='[
+              {%- for media in card_product.media limit: 3 -%}
+                {%- if media.media_type == "image" -%}
+                  {
+                    "src": "{{ media | image_url: width: 533 }}",
+                    "alt": "{{ media.alt | escape }}"
+                  }{% unless forloop.last %},{% endunless %}
+                {%- endif -%}
+              {%- endfor -%}
+            ]'
+          >
             {% comment %} media desktop {% endcomment %}
             <div class="media media--transparent media--hover-effect card-media-desktop">
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
