@@ -348,6 +348,11 @@
   .card .card__inner .card__media {
     overflow: visible
   }
+
+  .card__information {
+    padding: 4rem 1rem 2rem;
+  }
+
   .card-media-carousel {
     position: absolute;
     inset: 0;
@@ -378,7 +383,7 @@
   .card-media-dots {
     position: absolute;
     left: 50%;
-    bottom: -10px;
+    bottom: -15px;
     z-index: 5;
     display: flex;
     gap: 6px;
