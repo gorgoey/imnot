@@ -2,7 +2,9 @@
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+{%- comment -%}
 {{ 'ajaxinate.min.js' | asset_url | script_tag }}
+{%- endcomment -%}
 
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
@@ -197,12 +199,6 @@
   </div>
 </div>
 
-<script>
-  const endlessCollection = new Ajaxinate({
-    container: '#product-grid',
-    pagination: '.infinite_next',
-  });
-</script>
 {% schema %}
 {
   "name": "t:sections.main-collection-product-grid.name",
@@ -212,9 +208,9 @@
       "type": "range",
       "id": "products_per_page",
       "min": 8,
-      "max": 24,
+      "max": 30,
       "step": 4,
-      "default": 16,
+      "default": 30,
       "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
     },
     {
