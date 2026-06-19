@@ -49,17 +49,19 @@
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
         {%- if card_product.featured_media -%}
-          <div class="card__media" 
-               data-mobile-gallery='[
-              {%- for media in card_product.media -%}
-                {%- if media.media_type == "image" -%}
+          <div
+            class="card__media"
+            data-mobile-gallery="
+              [
+                 {%- assign image_medias = card_product.media | where: "media_type", "image" -%}
+                {%- for media in image_medias -%}
                   {
                     "src": "{{ media | image_url: width: 533 }}",
-                    "alt": "{{ media.alt | escape }}"
+                    "alt": {{ media.alt | json }}
                   }{% unless forloop.last %},{% endunless %}
-                {%- endif -%}
-              {%- endfor -%}
-            ]'
+                {%- endfor -%}
+              ]
+            "
           >
             {% comment %} media desktop {% endcomment %}
             <div class="media media--transparent media--hover-effect card-media-desktop">
