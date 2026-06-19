@@ -345,10 +345,6 @@
 }
 
 @media screen and (max-width: 749px) {
-  .card__media {
-    position: relative;
-  }
-
   .card-media-carousel {
     position: absolute;
     inset: 0;
