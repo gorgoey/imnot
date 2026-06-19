@@ -350,6 +350,10 @@
     z-index: 1;
   }
 
+  .card:has(.card-media-carousel) .card__heading a::after {
+    pointer-events: none;
+  }
+
   .card .card__inner .card__media {
     overflow: visible
   }
