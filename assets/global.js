@@ -1188,10 +1188,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (!images.length) {
-      console.warn(
-        "Empty mobile gallery",
-        mediaWrapper
-      );
+      console.warn("Empty mobile gallery", mediaWrapper);
 
       return;
     }
@@ -1262,6 +1259,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mediaWrapper.appendChild(carousel);
     mediaWrapper.appendChild(dots);
+    console.log("Carousel mounted", images.length, mediaWrapper);
     mediaWrapper.dataset.carouselMounted = "true";
   });
 });
