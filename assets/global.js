@@ -1272,15 +1272,21 @@ document.addEventListener("DOMContentLoaded", initMobileProductCardCarousel);
 window.addEventListener("load", initMobileProductCardCarousel);
 document.addEventListener("shopify:section:load", initMobileProductCardCarousel);
 
+let carouselObserverTimer;
+
 const productGrid = document.querySelector("#product-grid");
 
 if (productGrid) {
   const observer = new MutationObserver(() => {
-    initMobileProductCardCarousel();
+    clearTimeout(carouselObserverTimer);
+
+    carouselObserverTimer = setTimeout(() => {
+      initMobileProductCardCarousel();
+    }, 300);
   });
 
   observer.observe(productGrid, {
     childList: true,
-    subtree: true,
+    subtree: false,
   });
 }
