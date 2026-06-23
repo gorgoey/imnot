@@ -375,7 +375,7 @@
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-x;
+    touch-action: manipulation;
     z-index: 10;
     pointer-events: auto;
   }
