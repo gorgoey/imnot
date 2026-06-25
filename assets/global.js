@@ -1271,3 +1271,15 @@ function initMobileProductCardCarousel() {
 document.addEventListener("DOMContentLoaded", initMobileProductCardCarousel);
 window.addEventListener("load", initMobileProductCardCarousel);
 document.addEventListener("shopify:section:load", initMobileProductCardCarousel);
+
+
+const hasFeatureImage = mediaWrapper.dataset.hasFeatureImage === "true";
+
+if (!hasFeatureImage) {
+  const packshotIndex = 5;
+
+  if (images[packshotIndex]) {
+    const packshot = images.splice(packshotIndex, 1)[0];
+    images.unshift(packshot);
+  }
+}

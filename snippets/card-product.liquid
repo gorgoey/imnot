@@ -67,25 +67,26 @@
           endif
         -%}
         {%- if card_product.featured_media -%}
-          <div
-            class="card__media"
-            data-mobile-gallery='[
-              {%- if collection_feature_image != blank -%}
-                  {
-                    "src": "{{ collection_feature_image | image_url: width: 533 }}",
-                    "alt": {{ card_product.title | json }}
-                  },
-                {%- endif -%}
+              <div
+                class="card__media"
+                data-has-feature-image="{% if collection_feature_image != blank %}true{% else %}false{% endif %}"
+                data-mobile-gallery='[
+                  {%- if collection_feature_image != blank -%}
+                    {
+                      "src": "{{ collection_feature_image | image_url: width: 533 }}",
+                      "alt": {{ card_product.title | json }}
+                    },
+                  {%- endif -%}
 
-                {%- assign image_medias = card_product.media | where: "media_type", "image" -%}
-                {%- for media in image_medias -%}
-                  {
-                    "src": "{{ media | image_url: width: 533 }}",
-                    "alt": {{ media.alt | default: card_product.title | json }}
-                  }{% unless forloop.last %},{% endunless %}
-                {%- endfor -%}
-              ]'
-          >
+                  {%- assign image_medias = card_product.media | where: "media_type", "image" -%}
+                  {%- for media in image_medias -%}
+                    {
+                      "src": "{{ media | image_url: width: 533 }}",
+                      "alt": {{ media.alt | default: card_product.title | json }}
+                    }{% unless forloop.last %},{% endunless %}
+                  {%- endfor -%}
+                ]'
+              >
             {% comment %} media desktop {% endcomment %}
             <div class="media media--transparent media--hover-effect card-media-desktop">
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
