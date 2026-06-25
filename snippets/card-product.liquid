@@ -60,10 +60,10 @@
             assign card_first_image = card_product.featured_media
           endif
 
-          assign card_hover_image = card_product.featured_media
+          assign card_hover_image = card_product.media[1]
 
-          if card_hover_image.id == card_first_image.id
-            assign card_hover_image = card_product.media[0]
+          if card_hover_image == blank
+            assign card_hover_image = card_product.featured_media
           endif
         -%}
         {%- if card_product.featured_media -%}
