@@ -59,6 +59,12 @@
           if card_first_image == blank
             assign card_first_image = card_product.featured_media
           endif
+
+          assign card_hover_image = card_product.featured_media
+
+          if card_hover_image.id == card_first_image.id
+            assign card_hover_image = card_product.media[0]
+          endif
         -%}
         {%- if card_product.featured_media -%}
           <div
@@ -110,28 +116,28 @@
 
               {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
 
-              {%- if card_product.featured_media != null and show_secondary_image -%}
+              {%- if card_hover_image != blank and show_secondary_image -%}
                 <img
                   srcset="
-                    {%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
-                    {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
-                    {%- if card_product.featured_media.width >= 533 -%}{{ card_product.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
-                    {%- if card_product.featured_media.width >= 720 -%}{{ card_product.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
-                    {%- if card_product.featured_media.width >= 940 -%}{{ card_product.featured_media | image_url: width: 940 }} 940w,{%- endif -%}
-                    {%- if card_product.featured_media.width >= 1066 -%}{{ card_product.featured_media | image_url: width: 1066 }} 1066w,{%- endif -%}
-                    {{ card_product.featured_media | image_url }} {{ card_product.featured_media.width }}w
+                    {%- if card_hover_image.width >= 165 -%}{{ card_hover_image | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if card_hover_image.width >= 360 -%}{{ card_hover_image | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if card_hover_image.width >= 533 -%}{{ card_hover_image | image_url: width: 533 }} 533w,{%- endif -%}
+                    {%- if card_hover_image.width >= 720 -%}{{ card_hover_image | image_url: width: 720 }} 720w,{%- endif -%}
+                    {%- if card_hover_image.width >= 940 -%}{{ card_hover_image | image_url: width: 940 }} 940w,{%- endif -%}
+                    {%- if card_hover_image.width >= 1066 -%}{{ card_hover_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                    {{ card_hover_image | image_url }} {{ card_hover_image.width }}w
                   "
                   {% if images.src == true %}
-                    src="{{ card_product.featured_media | image_url: width: 533 }}"
+                    src="{{ card_hover_image | image_url: width: 533 }}"
                   {% else %}
                     src="https://cdn.shopify.com/s/files/1/0583/3316/7789/files/imnot-meta_cbc13e72-d42a-4886-bf7d-80423cbe9f2b.jpg?v=1671770050"
                   {% endif %}
                   sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                  alt="{{ card_product.featured_media.alt | escape }}"
+                  alt="{{ card_hover_image.alt | escape }}"
                   class="motion-reduce"
                   loading="lazy"
-                  width="{{ card_product.featured_media.width }}"
-                  height="{{ card_product.featured_media.height }}"
+                  width="{{ card_hover_image.width }}"
+                  height="{{ card_hover_image.height }}"
                 >
               {%- endif -%}
             </div>
