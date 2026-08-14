@@ -15,9 +15,9 @@
         ".template-blog h1 {font-size: 26px !important; font-weight: 500; letter-spacing: 0.5px; text-transform: none;}"
       ],
       "settings": {
-        "layout": "collage",
-        "show_image": false,
-        "image_height": "small",
+        "layout": "grid",
+        "show_image": true,
+        "image_height": "adapt",
         "show_date": false,
         "show_author": false,
         "padding_top": 0,
