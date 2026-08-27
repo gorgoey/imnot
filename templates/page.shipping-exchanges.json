@@ -156,7 +156,7 @@
         "35142379-d7b0-4407-b66c-a18b9f581202": {
           "type": "text",
           "settings": {
-            "text": "<p>Please allow 7–10 business days from the time we receive your return at our warehouse for our team to process the exchange. Once your exchange has been shipped, you will receive an email with the tracking information.<br/><br/>Please note that we do not offer returns for refunds at this time. We only accept size exchanges for full-priced items within 14 days of delivery, and exchanges are limited to one per order.<br/><br/>Customers are responsible for all shipping costs related to exchanges, including the cost of returning the item to our warehouse and the shipping cost for sending the exchanged item back to you.<br/><br/>When purchasing a return shipping label, please ensure that the package is marked as a “return” to avoid additional customs charges. However, if any taxes, duties, or customs fees are incurred, these charges will be the responsibility of the sender or the original customer.<br/><br/>Please also note the following conditions:<br/> • Items must be new, unused, and with the original tags still attached<br/> • Sale items or items purchased with any discount are not eligible for exchange<br/> • Exchanges are subject to product availability at the time the return is received and processed by our warehouse team<br/> • All returned items will be inspected before the exchange is approved<br/><br/>If you need to update the shipping address for your exchange, please contact us at imnotamorningperson.official@gmail.com and wait for our confirmation.</p><p></p><p></p><p></p>"
+            "text": "<p>Please allow 7–10 business days from the time we receive your return at our warehouse for our team to process the exchange. Once your exchange has been shipped, you will receive an email with the tracking information.<br/><br/>Please note that we do not offer returns for refunds at this time. We only accept size exchanges for full-priced items within 14 days of delivery, and exchanges are limited to one per order.<br/><br/>Customers are responsible for all shipping costs related to exchanges, including the cost of returning the item to our warehouse and the shipping cost for sending the exchanged item back to you.<br/><br/>When returning an item, please ensure that the package is marked as a “RETURN” to help avoid additional customs charges. If any taxes, duties, or customs fees are incurred, these charges will be the responsibility of the sender or original customer.<br/><br/><strong>INTERNATIONAL EXCHANGES</strong><br/><br/>For international orders, a $15 USD exchange handling fee applies to each exchange request. This fee covers the administrative and processing costs associated with international exchanges and does not include shipping costs.<br/><br/>Customers are responsible for all shipping costs associated with the exchange, including return shipping and the shipping cost of the replacement item. A return shipping label may be provided upon request, with the applicable cost charged to the customer.<br/><br/>Any applicable duties, taxes, customs fees, or other charges incurred during the return or delivery of the replacement item are the responsibility of the customer.<br/><br/>Replacement items will only be shipped after the returned item has been received, inspected, and approved by our warehouse team.<br/><br/>EXCHANGE CONDITIONS<br/><br/>* Items must be new, unused, unworn, and with all original tags attached.<br/>* Sale items or items purchased with any discount are not eligible for exchange.<br/>* Exchanges are subject to product availability at the time the return is received and processed.<br/>* All returned items will be inspected before the exchange is approved.<br/>* Exchange handling fees and shipping costs are non-refundable.<br/><br/>If you need to update the shipping address for your exchange, please contact us at IMNOTAMORNINGPERSON.OFFICIAL@GMAIL.COM and wait for our confirmation before returning your item.</p><p></p>"
           }
         }
       },
@@ -239,6 +239,18 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "rich_text_KdjhHg": {
+      "type": "rich-text",
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -249,6 +261,7 @@
     "21ee0fe2-5006-492f-ba46-96ba9154dab2",
     "e53eba84-6a9e-49ec-837b-f7e38f158726",
     "d05ba3ec-8245-4475-bee4-253f3837c8fb",
-    "bd6157ba-701f-4f14-9b96-ce726118247b"
+    "bd6157ba-701f-4f14-9b96-ce726118247b",
+    "rich_text_KdjhHg"
   ]
 }
