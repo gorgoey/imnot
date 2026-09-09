@@ -3077,3 +3077,17 @@ details-disclosure > details {
   100% { transform: translateX(-100%); }
 }
 
+/* FULL WIDTH COLLECTION */
+@media screen and (min-width: 990px) {
+  .template-collection .collection.page-width {
+    max-width: none !important;
+    width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .template-collection .product-grid-container {
+    max-width: none !important;
+    width: 100% !important;
+  }
+}
