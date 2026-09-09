@@ -166,15 +166,19 @@
           "announcement-bar-0",
           "9351c1e9-ca8c-499a-ab7c-546d89267368"
         ],
+        "custom_css": [],
         "settings": {}
       },
       "header": {
         "type": "header",
-        "custom_css": [],
+        "custom_css": [
+          ".product-grid-container,.product-grid-container .collection,.product-grid-container .page-width {max-width: 100% !important; width: 100% !important;}",
+          ".product-grid-container .page-width,.product-grid-container .collection {padding-left: 20px !important; padding-right: 20px !important;}"
+        ],
         "settings": {
           "color_scheme": "background-1",
           "logo": "shopify://shop_images/logo-black.png",
-          "logo_width": 250,
+          "logo_width": 170,
           "logo_position": "top-center",
           "menu": "main-menu",
           "menu_type_desktop": "dropdown",
