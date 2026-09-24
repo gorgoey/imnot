@@ -60,7 +60,7 @@
           "settings": {
             "heading": "Materials",
             "icon": "leather",
-            "content": "<p>Recycling Fabric<br/>55% HEMP 45% COTTON <br/><br/></p>",
+            "content": "<p>6% Royal Alpaca 52% RWS Wool 42% Polyamide Fibre (Recycled)</p>",
             "page": ""
           }
         },
@@ -69,7 +69,7 @@
           "settings": {
             "heading": "Care Instructions",
             "icon": "heart",
-            "content": "<ul><li>Cold machine wash with like colours</li><li>Do not bleach</li><li>Do not tumble dry</li><li>Cool iron </li><li>Do not dry clean </li></ul>",
+            "content": "<ul><li>&nbsp;dry clean&nbsp;only</li></ul>",
             "page": ""
           }
         },
