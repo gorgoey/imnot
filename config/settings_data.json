@@ -197,7 +197,7 @@
             "type": "image",
             "settings": {
               "image": "shopify://shop_images/imnot-white-ratio.png",
-              "image_width": 100,
+              "image_width": 120,
               "alignment": ""
             }
           },
