@@ -294,7 +294,7 @@
         "image": "shopify://shop_images/logo_png.png",
         "email_placeholder": "E-mail",
         "success_message": "You’re in! Check your inbox for your 10% code ✧",
-        "delay_seconds": 0
+        "delay_seconds": 2
       }
     }
   },
