@@ -239,7 +239,8 @@
           "footer-1"
         ],
         "custom_css": [
-          ".footer {margin: 0;}"
+          ".footer {margin: 0;}",
+          "css.footer-block__heading {font-size: 14px;}"
         ],
         "settings": {
           "color_scheme": "accent-1",
