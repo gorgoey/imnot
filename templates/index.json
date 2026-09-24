@@ -286,6 +286,12 @@
     },
     "email_signup_popup_AmCCW3": {
       "type": "email-signup-popup",
+      "custom_css": [
+        ".email-popup-box {width: 300px !important; max-width: calc(100vw - 30px) !important; background: #fff !important; color: #000 !important; border-radius: 0 !important;}",
+        ".email-popup-image {display: none !important;}",
+        ".email-popup-content {padding: 28px 24px 20px !important; background: #fff !important; color: #000 !important;}",
+        ".email-popup-close {color: #000 !important;}"
+      ],
       "name": "Email signup popup",
       "settings": {
         "enable_popup": true,
