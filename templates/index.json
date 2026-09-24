@@ -41,7 +41,7 @@
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/000034_3cdef322-014a-4e80-b381-879d20ca1249.jpg",
+        "image": "shopify://shop_images/S8_0721_2ec7c077-6076-4618-837d-32a4dc37d922.jpg",
         "banner_link": "shopify://collections/basic-wears",
         "banner_link_new_tab": false,
         "video_background": false,
@@ -65,7 +65,7 @@
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/000029_7a80507e-e45b-4c9b-b3ce-10c91743a9f7.jpg",
+        "image": "shopify://shop_images/S8_0776.jpg",
         "banner_link": "shopify://collections/basic-wears",
         "banner_link_new_tab": false,
         "video_background": false,
