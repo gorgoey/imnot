@@ -244,7 +244,7 @@
         "settings": {
           "color_scheme": "accent-1",
           "newsletter_enable": true,
-          "newsletter_heading": "JOIN OUR MAILING LIST",
+          "newsletter_heading": "Be the first to know about our new arrivals, exclusive restocks and special updates.",
           "show_social": false,
           "enable_country_selector": false,
           "enable_language_selector": false,
