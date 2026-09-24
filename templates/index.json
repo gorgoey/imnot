@@ -297,6 +297,20 @@
         "success_message": "You’re in! Check your inbox for your 10% code ✧",
         "delay_seconds": 2
       }
+    },
+    "email_signup_popup_dfxwJL": {
+      "type": "email-signup-popup",
+      "custom_css": [],
+      "name": "Email signup popup",
+      "settings": {
+        "enable_popup": true,
+        "heading": "Psst… 10% off just for you <3",
+        "subheading": "Sign up to get 10% off and early access to new collections!",
+        "image": "shopify://shop_images/S10_0917.jpg",
+        "email_placeholder": "E-mail",
+        "success_message": "You’re in! Check your inbox for your 10% code ✧",
+        "delay_seconds": 2
+      }
     }
   },
   "order": [
@@ -311,6 +325,7 @@
     "17630524679213280e",
     "custom_liquid_gwMgtH",
     "announcement_popup_itFTNf",
-    "email_signup_popup_AmCCW3"
+    "email_signup_popup_AmCCW3",
+    "email_signup_popup_dfxwJL"
   ]
 }
