@@ -193,14 +193,6 @@
       "footer": {
         "type": "footer",
         "blocks": {
-          "2c8d6534-e3b0-4837-abd5-8aa1c9e9314a": {
-            "type": "image",
-            "settings": {
-              "image": "shopify://shop_images/imnot-white-ratio.png",
-              "image_width": 120,
-              "alignment": ""
-            }
-          },
           "17ec154e-6838-4396-a22b-9b564586580d": {
             "type": "link_list",
             "settings": {
@@ -232,7 +224,6 @@
           }
         },
         "block_order": [
-          "2c8d6534-e3b0-4837-abd5-8aa1c9e9314a",
           "17ec154e-6838-4396-a22b-9b564586580d",
           "3687a9d2-5052-46ea-83d5-8f773b5ec555",
           "footer-2",
@@ -243,7 +234,7 @@
           "input[type=\"email\"] {font-size: 11px !important; min-height: 34px !important; height: 34px !important; padding-top: 6px !important; padding-bottom: 6px !important;}"
         ],
         "settings": {
-          "color_scheme": "accent-1",
+          "color_scheme": "background-1",
           "newsletter_enable": true,
           "newsletter_heading": "Be the first to know about our new arrivals, exclusive restocks and special updates <3",
           "show_social": false,
