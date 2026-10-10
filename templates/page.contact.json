@@ -32,8 +32,8 @@
         "template--15972447158445__2a9d7d32-d189-4f58-a68c-1d79bca7b8bf-16728486360367e7ee-0"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
         "color_scheme": "background-1",
         "full_width": true,
         "padding_top": 40,
@@ -46,7 +46,7 @@
         "text_89qBwL": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>STORE</strong><br/><br/>IMNOTAMORNINGPERSON FLAGSHIP STORE<br/>Asoke Court, 2nd Floor, Room 2B<br/>Asoke, Bangkok, Thailand<br/><br/>Monday – Saturday<br/>11:00 AM – 7:00 PM<br/><br/>Sunday<br/>11:00 AM – 5:00 PM<br/><br/><strong>CONTACT</strong><br/><br/>Customer Care / General Inquiries<br/>contact@imnotamorningperson.store<br/></p><p>Online Orders & Shipping<br/>orders@imnotamorningperson.store<br/><br/>Press & Collaborations<br/>press@imnotamorningperson.store<br/><br/>Career & Internship Opportunities<br/>job@imnotamorningperson.store<br/><br/>Instagram / Tiktok<br/>imnotamorningperson__official<br/><br/><strong>CUSTOMER CARE</strong><br/></p><p>For all customer inquiries, including product information, sizing, shipping, returns, and exchanges, please email contact@imnotamorningperson.store<br/><br/>For questions regarding existing orders, order status, or delivery updates, please contact orders@imnotamorningperson.store.<br/><br/>Our customer care team responds to emails during business hours (GMT+7, Bangkok time).<br/><br/>We appreciate your patience and will get back to you as soon as possible.</p>"
+            "text": "<p><strong>STORE</strong><br/><br/>IMNOTAMORNINGPERSON FLAGSHIP STORE<br/>Asoke Court, 2nd Floor, Room 2B<br/>Asoke, Bangkok, Thailand<br/><br/>Monday – Saturday<br/>11:00 AM – 7:00 PM<br/><br/>Sunday<br/>11:00 AM – 5:00 PM<br/><br/><strong>CONTACT</strong><br/><br/>Customer Care / General Inquiries<br/>contact@imnotamorningperson.store<br/></p><p>Online Orders & Shipping<br/>orders@imnotamorningperson.store<br/><br/>Press & Collaborations<br/>press@imnotamorningperson.store<br/><br/>Career & Internship Opportunities<br/>job@imnotamorningperson.store<br/><br/>Instagram / Tiktok<br/>imnotamorningperson__official<br/><br/><strong>CUSTOMER CARE</strong><br/>For all customer inquiries, including product information, sizing, shipping, returns, and exchanges, please email <strong>contact@imnotamorningperson.store</strong><br/><br/>For questions regarding existing orders, order status, or delivery updates, please contact <strong>orders@imnotamorningperson.store.</strong><br/><br/>Our customer care team responds to emails during business hours (GMT+7, Bangkok time).<br/><br/>We appreciate your patience and will get back to you as soon as possible.</p>"
           }
         }
       },
@@ -56,11 +56,11 @@
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
-        "content_alignment": "center",
+        "content_alignment": "left",
         "color_scheme": "background-1",
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 12,
+        "padding_bottom": 24
       }
     },
     "489c6d5c-df2c-4e99-a6ee-84b7dec814ba": {
