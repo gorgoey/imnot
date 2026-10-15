@@ -60,7 +60,7 @@
           "settings": {
             "heading": "Materials",
             "icon": "leather",
-            "content": "<p>60% COTTON JERSEY  40% RECYCLED POLYESTER</p>",
+            "content": "<p>60% COTTON JERSEY &nbsp;40% RECYCLED POLYESTER</p>",
             "page": ""
           }
         },
@@ -69,7 +69,7 @@
           "settings": {
             "heading": "Care Instructions",
             "icon": "heart",
-            "content": "<ul><li>Cold machine wash with like colours</li><li>Do not bleach</li><li>Do not tumble dry</li><li>Cool iron </li><li>Do not dry clean </li></ul>",
+            "content": "<p>Wash only when necessary.<br/><br/>Hand wash in cold water with a gentle detergent. Avoid harsh detergents and bleach.<br/><br/>Remove excess water by gently rolling in a towel. Do not twist or wring.<br/><br/>Lay flat to dry in the shade, away from direct sunlight. Do not tumble dry.<br/><br/>If needed, iron on low heat or steam gently to release wrinkles. Reshape while slightly damp.<br/><br/>If dry cleaning, choose an eco-friendly cleaner and avoid high heat, starch, and harsh chemicals.</p>",
             "page": ""
           }
         },
