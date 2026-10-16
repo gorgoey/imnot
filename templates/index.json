@@ -322,6 +322,14 @@
         "description": "Sign up to get 10% off and early access to new collections!",
         "success_message": "YOU'RE IN. CHECK YOUR INBOX."
       }
+    },
+    "store_popup_section_kbLdyn": {
+      "type": "store-popup-section",
+      "name": "Store Popup Poster",
+      "settings": {
+        "poster": "shopify://shop_images/S__150716429.jpg",
+        "poster_link": ""
+      }
     }
   },
   "order": [
@@ -338,6 +346,7 @@
     "announcement_popup_itFTNf",
     "email_signup_popup_AmCCW3",
     "email_signup_popup_dfxwJL",
-    "email_sticky_GreJie"
+    "email_sticky_GreJie",
+    "store_popup_section_kbLdyn"
   ]
 }
