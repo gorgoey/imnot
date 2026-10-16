@@ -276,15 +276,10 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var popup = document.getElementById('EmailSignupPopup-{{ section.id }}');
+      const popup = document.getElementById('EmailSignupPopup-{{ section.id }}');
       if (!popup) return;
 
-      // ถ้าเคยปิดไปแล้ว ไม่ต้องโชว์อีก
-      if (window.localStorage && localStorage.getItem('imnot_email_popup_closed') === 'true') {
-        return;
-      }
-
-      var delay = {{ section.settings.delay_seconds | default: 3 | times: 1000 }};
+      const delay = {{ section.settings.delay_seconds | default: 3 | times: 1000 }};
 
       setTimeout(function () {
         popup.classList.add('is-visible');
@@ -292,12 +287,12 @@
       }, delay);
 
       popup.addEventListener('click', function (e) {
-        if (e.target === popup || e.target.closest('.email-popup-close')) {
+        if (
+          e.target === popup ||
+          e.target.closest('.email-popup-close')
+        ) {
           popup.classList.remove('is-visible');
           popup.setAttribute('aria-hidden', 'true');
-          if (window.localStorage) {
-            localStorage.setItem('imnot_email_popup_closed', 'true');
-          }
         }
       });
     });
