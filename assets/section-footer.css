@@ -456,6 +456,11 @@ noscript .localization-selector.link {
   .footer-block-image {
     text-align: center;
   }
+
+  .footer-block__details-content p {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }
 
 .footer-block-image > img {
