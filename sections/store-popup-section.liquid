@@ -1,0 +1,178 @@
+
+{% if section.settings.poster != blank %}
+  <div
+    id="StorePopup-{{ section.id }}"
+    class="store-popup"
+    data-store-popup
+    hidden
+  >
+    <div class="store-popup__overlay" data-popup-close></div>
+
+    <div
+      class="store-popup__content"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Store announcement"
+    >
+      <button
+        type="button"
+        class="store-popup__close"
+        aria-label="Close popup"
+        data-popup-close
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor"
+          stroke-width="1.8" stroke-linecap="round">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+
+      {% if section.settings.poster_link != blank %}
+        <a href="{{ section.settings.poster_link }}">
+      {% endif %}
+
+      {{
+        section.settings.poster
+        | image_url: width: 1000
+        | image_tag:
+          class: 'store-popup__image',
+          loading: 'eager',
+          widths: '400, 600, 800, 1000',
+          sizes: '(max-width: 749px) 80vw, 400px'
+      }}
+
+      {% if section.settings.poster_link != blank %}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <style>
+    .store-popup[hidden] {
+      display: none !important;
+    }
+
+    .store-popup {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .store-popup__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+    }
+
+    .store-popup__content {
+      position: relative;
+      width: min(80vw, 400px);
+      max-height: 85dvh;
+      aspect-ratio: 4 / 5;
+      z-index: 1;
+    }
+
+    .store-popup__content a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .store-popup__image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .store-popup__close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (max-width: 749px) {
+      .store-popup__content {
+        width: min(85vw, 360px);
+        max-height: 80dvh;
+      }
+    }
+  </style>
+
+  <script>
+    (() => {
+      const popup = document.getElementById(
+        'StorePopup-{{ section.id }}'
+      );
+
+      if (!popup || popup.dataset.initialized) return;
+      popup.dataset.initialized = 'true';
+
+      const storageKey = 'store-popup-{{ section.id }}';
+
+      function openPopup() {
+        if (sessionStorage.getItem(storageKey)) return;
+        popup.hidden = false;
+      }
+
+      function closePopup() {
+        popup.hidden = true;
+        sessionStorage.setItem(storageKey, 'closed');
+      }
+
+      popup.querySelectorAll('[data-popup-close]').forEach(el => {
+        el.addEventListener('click', closePopup);
+      });
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !popup.hidden) {
+          closePopup();
+        }
+      });
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', openPopup);
+      } else {
+        openPopup();
+      }
+    })();
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Store Popup Poster",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "poster",
+      "label": "Poster Image (4:5)"
+    },
+    {
+      "type": "url",
+      "id": "poster_link",
+      "label": "Poster Link (Optional)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store Popup Poster"
+    }
+  ]
+}
+{% endschema %}
