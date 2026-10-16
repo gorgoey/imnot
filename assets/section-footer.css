@@ -388,10 +388,6 @@ noscript .localization-selector.link {
   }
 }
 
-.footer-block__details-content {
-  margin-bottom: 4rem;
-}
-
 @media screen and (min-width: 750px) {
   .footer-block__details-content {
     margin-bottom: 0;
@@ -453,6 +449,10 @@ noscript .localization-selector.link {
 }
 
 @media screen and (max-width: 749px) {
+  .footer-block__details-content {
+    margin-bottom: 0;
+  }
+
   .footer-block-image {
     text-align: center;
   }
