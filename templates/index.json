@@ -286,6 +286,7 @@
     },
     "email_signup_popup_AmCCW3": {
       "type": "email-signup-popup",
+      "disabled": true,
       "custom_css": [],
       "name": "Email signup popup",
       "settings": {
