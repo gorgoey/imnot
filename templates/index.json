@@ -314,9 +314,9 @@
         "delay_seconds": 2
       }
     },
-    "email_sticky_GreJie": {
-      "type": "email-sticky",
-      "name": "Email Sticky",
+    "imnot_email_sticky_CEH6VB": {
+      "type": "imnot-email-sticky",
+      "name": "IMNOT Email Sticky",
       "settings": {
         "enable_sticky": true,
         "description": "Sign up to get 10% off and early access to new collections!",
@@ -338,6 +338,6 @@
     "announcement_popup_itFTNf",
     "email_signup_popup_AmCCW3",
     "email_signup_popup_dfxwJL",
-    "email_sticky_GreJie"
+    "imnot_email_sticky_CEH6VB"
   ]
 }
