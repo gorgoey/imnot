@@ -1,242 +1,428 @@
 
 {% comment %}
   IMNOTAMORNINGPERSON — Email Sticky
+  Version: 2.0
+
+  Native Shopify newsletter form
+  Shopify Marketing Automation compatible
 {% endcomment %}
 
 {%- if section.settings.enable_sticky -%}
-  <div
-    id="EmailSticky-{{ section.id }}"
-    class="imnot-email-sticky"
-    role="region"
-    aria-label="Email newsletter signup"
+
+{%- assign sticky_id = 'EmailSticky-' | append: section.id -%}
+{%- assign sticky_form_id = 'EmailStickyForm-' | append: section.id -%}
+
+<div
+  id="{{ sticky_id }}"
+  class="imnot-email-sticky"
+  role="region"
+  aria-label="Email newsletter signup"
+  data-section-id="{{ section.id }}"
+  data-storage-mode="{{ section.settings.dismiss_behavior }}"
+  data-hide-after-success="{{ section.settings.hide_after_success }}"
+  style="visibility: hidden;"
+>
+  <button
+    type="button"
+    class="imnot-email-sticky__close"
+    aria-label="Close newsletter signup"
   >
-    <button
-      type="button"
-      class="imnot-email-sticky__close"
-      aria-label="Close newsletter signup"
-    >
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M5 5L19 19M19 5L5 19"/>
-      </svg>
-    </button>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 5L19 19M19 5L5 19"/>
+    </svg>
+  </button>
 
-    <div class="imnot-email-sticky__content">
+  <div class="imnot-email-sticky__content">
 
-      {%- if section.settings.description != blank -%}
-        <p class="imnot-email-sticky__description">
-          {{ section.settings.description | escape }}
-        </p>
+    {%- if section.settings.description != blank -%}
+      <p class="imnot-email-sticky__description">
+        {{ section.settings.description | escape }}
+      </p>
+    {%- endif -%}
+
+    {%- form 'customer',
+      id: sticky_form_id,
+      class: 'imnot-email-sticky__form'
+    -%}
+
+      <input
+        type="hidden"
+        name="contact[tags]"
+        value="newsletter"
+      >
+
+      {%- if form.posted_successfully? -%}
+
+        <div
+          class="imnot-email-sticky__message"
+          role="status"
+          data-subscribe-success
+        >
+          {{ section.settings.success_message | escape }}
+        </div>
+
+      {%- else -%}
+
+        <div class="imnot-email-sticky__field">
+
+          <input
+            id="EmailStickyInput-{{ section.id }}"
+            type="email"
+            name="contact[email]"
+            value="{{ form.email | escape }}"
+            placeholder="{{ section.settings.email_placeholder | escape }}"
+            aria-label="Email address"
+            autocomplete="email"
+            autocorrect="off"
+            autocapitalize="off"
+            {% if form.errors %}
+              aria-invalid="true"
+              aria-describedby="EmailStickyError-{{ section.id }}"
+            {% endif %}
+            required
+          >
+
+          <button
+            type="submit"
+            aria-label="Subscribe to newsletter"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 12H20M13 5L20 12L13 19"/>
+            </svg>
+          </button>
+
+        </div>
+
+        {%- if form.errors -%}
+          <small
+            id="EmailStickyError-{{ section.id }}"
+            class="imnot-email-sticky__error"
+            role="alert"
+          >
+            {{ form.errors.messages['email'] | escape }}
+          </small>
+        {%- endif -%}
+
       {%- endif -%}
 
-      {%- assign sticky_form_id = 'EmailStickyForm-' | append: section.id -%}
+    {%- endform -%}
 
-      {%- form 'customer', id: sticky_form_id, class: 'imnot-email-sticky__form' -%}
-        <input type="hidden" name="contact[tags]" value="newsletter">
-
-        {%- if form.posted_successfully? -%}
-          <p class="imnot-email-sticky__message" role="status">
-            {{ section.settings.success_message | escape }}
-          </p>
-        {%- else -%}
-          <div class="imnot-email-sticky__field">
-            <input
-              id="EmailStickyInput-{{ section.id }}"
-              type="email"
-              name="contact[email]"
-              value="{{ form.email }}"
-              placeholder="{{ section.settings.email_placeholder | escape }}"
-              aria-label="Email address"
-              autocomplete="email"
-              autocorrect="off"
-              autocapitalize="off"
-              {% if form.errors %}
-                aria-invalid="true"
-                aria-describedby="EmailStickyError-{{ section.id }}"
-              {% endif %}
-              required
-            >
-
-            <button type="submit" aria-label="Subscribe">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 12H20M13 5L20 12L13 19"/>
-              </svg>
-            </button>
-          </div>
-
-          {%- if form.errors -%}
-            <small
-              id="EmailStickyError-{{ section.id }}"
-              class="imnot-email-sticky__error"
-              role="alert"
-            >
-              {{ form.errors.messages['email'] | escape }}
-            </small>
-          {%- endif -%}
-        {%- endif -%}
-      {%- endform -%}
-
-    </div>
   </div>
+</div>
 
-  <style>
-    #shop-hcaptcha-badge-container {
-        visibility: hidden !important;
+<style>
+  /* ==============================
+     IMNOT EMAIL STICKY
+     ============================== */
+
+  #{{ sticky_id }} {
+    position: fixed;
+
+    right: {{ section.settings.right_offset }}px;
+    bottom: {{ section.settings.bottom_offset }}px;
+
+    width: {{ section.settings.box_width }}px;
+    min-height: 105px;
+    max-width: calc(100vw - 24px);
+
+    z-index: 9999;
+    box-sizing: border-box;
+
+    background: #fff;
+    color: #000;
+
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .18);
+
+    font-family: inherit;
+
+    opacity: 1;
+
+    transition:
+      opacity .2s ease,
+      transform .2s ease,
+      visibility .2s ease;
+  }
+
+  #{{ sticky_id }}.is-hidden {
+    opacity: 0;
+    visibility: hidden !important;
+    pointer-events: none;
+    transform: translateY(10px);
+  }
+
+  /* CONTENT */
+
+  #{{ sticky_id }} .imnot-email-sticky__content {
+    padding: 20px 12px 12px;
+  }
+
+  #{{ sticky_id }} .imnot-email-sticky__description {
+    margin: 0 0 12px;
+
+    color: #000;
+
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.3;
+
+    text-align: center;
+  }
+
+  /* FORM */
+
+  #{{ sticky_id }} .imnot-email-sticky__form {
+    margin: 0;
+  }
+
+  #{{ sticky_id }} .imnot-email-sticky__field {
+    display: flex;
+    align-items: center;
+
+    height: 32.5px;
+
+    border: 1px solid #9a9a9a;
+    box-sizing: border-box;
+  }
+
+  #{{ sticky_id }} .imnot-email-sticky__field input {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+
+    padding: 0 9px;
+
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    box-shadow: none;
+
+    background: transparent;
+    color: #000;
+
+    font-family: inherit;
+    font-size: 16px;
+  }
+
+  #{{ sticky_id }} .imnot-email-sticky__field input::placeholder {
+    color: #9b9b9b;
+    opacity: 1;
+
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+
+  #{{ sticky_id }} .imnot-email-sticky__field input:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: -2px;
+  }
+
+  /* SUBMIT BUTTON */
+
+  #{{ sticky_id }} .imnot-email-sticky__field button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 32px;
+    height: 100%;
+
+    padding: 0;
+    border: 0;
+
+    background: transparent;
+    color: #000;
+
+    cursor: pointer;
+  }
+
+  #{{ sticky_id }} .imnot-email-sticky__field button svg {
+    width: 19px;
+    height: 19px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* CLOSE BUTTON */
+
+  #{{ sticky_id }} .imnot-email-sticky__close {
+    position: absolute;
+
+    top: -12px;
+    right: 12px;
+
+    width: 20px;
+    height: 20px;
+
+    padding: 4px;
+    border: 0;
+    border-radius: 50%;
+
+    background: #000;
+    color: #fff;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #{{ sticky_id }} .imnot-email-sticky__close svg {
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+  }
+
+  /* SUCCESS / ERROR */
+
+  #{{ sticky_id }} .imnot-email-sticky__message {
+    font-size: 11px;
+    line-height: 1.4;
+    text-align: center;
+    color: #000;
+  }
+
+  #{{ sticky_id }} .imnot-email-sticky__error {
+    display: block;
+    margin-top: 4px;
+    color: #c00;
+    font-size: 10px;
+    line-height: 1.3;
+  }
+
+  /* MOBILE */
+
+  @media screen and (max-width: 749px) {
+    #{{ sticky_id }} {
+      left: 50%;
+      right: auto;
+
+      bottom: {{ section.settings.mobile_bottom_offset }}px;
+
+      width: min(
+        {{ section.settings.box_width }}px,
+        calc(100vw - 24px)
+      );
+
+      max-height: 80dvh;
+
+      transform: translateX(-50%);
     }
 
-    #EmailSticky-{{ section.id }} {
-      position: fixed;
-      right: {{ section.settings.right_offset }}px;
-      bottom: {{ section.settings.bottom_offset }}px;
-      width: {{ section.settings.box_width }}px;
-      z-index: 9999;
-      width: 250px;
-      height: 105px;
-      box-sizing: border-box;
-      background: #fff;
-      color: #000;
-      border-radius: 12px;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, .18);
-      font-family: inherit;
-      transition: opacity .2s ease, transform .2s ease;
+    #{{ sticky_id }}.is-hidden {
+      transform: translate(-50%, 10px);
     }
+  }
 
-    #EmailSticky-{{ section.id }}.is-hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transform: translateY(10px);
+  @media (prefers-reduced-motion: reduce) {
+    #{{ sticky_id }} {
+      transition: none;
     }
+  }
+</style>
 
-    #EmailSticky-{{ section.id }} .imnot-email-sticky__content {
-      padding: 20px 12px 12px;
-    }
+<script>
+(function () {
+  const sticky = document.getElementById({{ sticky_id | json }});
+  if (!sticky) return;
 
-    #EmailSticky-{{ section.id }} .imnot-email-sticky__description {
-      margin: 0 0 12px;
-      color: #000;
-      font-size: 11px;
-      font-weight: 500;
-      line-height: 1.3;
-      text-align: center;
-    }
+  const closeButton = sticky.querySelector(
+    '.imnot-email-sticky__close'
+  );
 
-    #EmailSticky-{{ section.id }} .imnot-email-sticky__field {
-      display: flex;
-      align-items: center;
-      height: 32.5px;
-      border: 1px solid #9a9a9a;
-      box-sizing: border-box;
-    }
+  const storageMode = sticky.dataset.storageMode;
+  const hideAfterSuccess =
+    sticky.dataset.hideAfterSuccess === 'true';
 
-    #EmailSticky-{{ section.id }} .imnot-email-sticky__field input {
-      width: 100%;
-      min-width: 0;
-      height: 100%;
-      padding: 0 9px;
-      border: 0;
-      border-radius: 0;
-      outline: 0;
-      box-shadow: none;
-      background: transparent;
-      color: #000;
-      font-family: inherit;
-      font-size: 16px;
-      padding: .25em;
-    }
-    #EmailSticky-{{ section.id }} .imnot-email-sticky__field input::placeholder {
-      font-size: 11px;
-      color: #9b9b9b;
-      opacity: 1;
-      text-transform: uppercase;
-    }
-    #EmailSticky-{{ section.id }} .imnot-email-sticky__field button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex: 0 0 32px;
-      height: 100%;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      color: #000;
-      cursor: pointer;
-    }
+  const dismissKey = 'imnot_email_sticky_dismissed';
+  const subscribedKey = 'imnot_email_sticky_subscribed';
 
-    #EmailSticky-{{ section.id }} .imnot-email-sticky__field button svg {
-      width: 19px;
-      height: 19px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    #EmailSticky-{{ section.id }} .imnot-email-sticky__close {
-      position: absolute;
-      top: -12px;
-      right: 12px;
-      width: 20px;
-      height: 20px;
-      padding: 5px;
-      border: 0;
-      border-radius: 50%;
-      background: #000;
-      color: #fff;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #EmailSticky-{{ section.id }} .imnot-email-sticky__close svg {
-      width: 100%;
-      height: 100%;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2.2;
-      stroke-linecap: round;
-    }
-
-    #EmailSticky-{{ section.id }} .imnot-email-sticky__message {
-      font-size: 11px;
-      text-align: center;
-      line-height: 1.4;
-    }
-
-    #EmailSticky-{{ section.id }} .imnot-email-sticky__error {
-      display: block;
-      margin-top: 3px;
-      color: #c00;
-      font-size: 9px;
-    }
-
-    @media screen and (max-width: 749px) {
-      #EmailSticky-{{ section.id }} {
-        right: auto;
-        bottom: 12px;
-        width: min(70vw, 300px);
-        max-height: 80dvh;
-        transform: translateX(-50%);
-        left: 50%;
+  function getStorage() {
+    try {
+      if (storageMode === 'session') {
+        return window.sessionStorage;
       }
+
+      if (storageMode === 'permanent') {
+        return window.localStorage;
+      }
+    } catch (error) {
+      return null;
     }
-  </style>
 
-  <script>
-    (function () {
-      const sticky = document.getElementById('EmailSticky-{{ section.id }}');
-      if (!sticky) return;
+    return null;
+  }
 
-      const closeButton = sticky.querySelector('.imnot-email-sticky__close');
+  const storage = getStorage();
 
-      closeButton.addEventListener('click', function () {
-        sticky.classList.add('is-hidden');
-      });
-    })();
-  </script>
+  function readStorage(key) {
+    try {
+      return storage && storage.getItem(key) === 'true';
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function writeStorage(key) {
+    try {
+      if (storage) {
+        storage.setItem(key, 'true');
+      }
+    } catch (error) {
+      // Storage unavailable.
+    }
+  }
+
+  function hideSticky() {
+    sticky.classList.add('is-hidden');
+    sticky.style.visibility = 'hidden';
+  }
+
+  function showSticky() {
+    sticky.classList.remove('is-hidden');
+    sticky.style.visibility = 'visible';
+  }
+
+  const successMessage = sticky.querySelector(
+    '[data-subscribe-success]'
+  );
+
+  if (successMessage) {
+    if (hideAfterSuccess) {
+      writeStorage(subscribedKey);
+      hideSticky();
+    } else {
+      showSticky();
+    }
+  } else if (
+    readStorage(dismissKey) ||
+    (hideAfterSuccess && readStorage(subscribedKey))
+  ) {
+    hideSticky();
+  } else {
+    showSticky();
+  }
+
+  if (closeButton) {
+    closeButton.addEventListener('click', function () {
+      writeStorage(dismissKey);
+      hideSticky();
+    });
+  }
+})();
+</script>
+
 {%- endif -%}
-
 
 {% schema %}
 {
@@ -252,12 +438,38 @@
     },
     {
       "type": "paragraph",
-      "content": "Floating email signup form. Connects to Shopify Customers and email marketing automations."
+      "content": "Floating newsletter signup connected to Shopify email marketing."
     },
     {
       "type": "checkbox",
       "id": "enable_sticky",
       "label": "Enable Email Sticky",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "dismiss_behavior",
+      "label": "Remember when closed",
+      "options": [
+        {
+          "value": "none",
+          "label": "Show on every page load"
+        },
+        {
+          "value": "session",
+          "label": "Until browser session ends"
+        },
+        {
+          "value": "permanent",
+          "label": "Remember on this browser"
+        }
+      ],
+      "default": "session"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_after_success",
+      "label": "Hide after successful signup",
       "default": true
     },
     {
@@ -272,15 +484,15 @@
     },
     {
       "type": "text",
-      "id": "success_message",
-      "label": "Success message",
-      "default": "YOU'RE IN. CHECK YOUR INBOX."
-    },
-    {
-      "type": "text",
       "id": "email_placeholder",
       "label": "Email placeholder",
       "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "YOU'RE IN. CHECK YOUR INBOX."
     },
     {
       "type": "header",
@@ -298,8 +510,8 @@
     },
     {
       "type": "range",
-      "id": "bottom_offset",
-      "label": "Bottom spacing",
+      "id": "right_offset",
+      "label": "Desktop right spacing",
       "min": 0,
       "max": 100,
       "step": 5,
@@ -308,8 +520,8 @@
     },
     {
       "type": "range",
-      "id": "right_offset",
-      "label": "Right spacing",
+      "id": "bottom_offset",
+      "label": "Desktop bottom spacing",
       "min": 0,
       "max": 100,
       "step": 5,
@@ -317,12 +529,22 @@
       "default": 20
     },
     {
+      "type": "range",
+      "id": "mobile_bottom_offset",
+      "label": "Mobile bottom spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 12
+    },
+    {
       "type": "header",
       "content": "04 - Marketing"
     },
     {
       "type": "paragraph",
-      "content": "Uses Shopify native newsletter subscription. Configure welcome emails and discount codes in Shopify Marketing > Automations."
+      "content": "Uses Shopify native newsletter signup. Manage welcome emails and discount codes under Marketing > Automations."
     }
   ],
   "presets": [
@@ -332,4 +554,3 @@
   ]
 }
 {% endschema %}
-
