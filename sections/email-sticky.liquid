@@ -44,7 +44,7 @@
               type="email"
               name="contact[email]"
               value="{{ form.email }}"
-              placeholder="Email"
+              placeholder="{{ section.settings.email_placeholder | escape }}"
               aria-label="Email address"
               autocomplete="email"
               autocorrect="off"
@@ -85,8 +85,9 @@
 
     #EmailSticky-{{ section.id }} {
       position: fixed;
-      right: 20px;
-      bottom: 60px;
+      right: {{ section.settings.right_offset }}px;
+      bottom: {{ section.settings.bottom_offset }}px;
+      width: {{ section.settings.box_width }}px;
       z-index: 9999;
       width: 250px;
       height: 105px;
@@ -236,15 +237,32 @@
   </script>
 {%- endif -%}
 
+
 {% schema %}
 {
-  "name": "Email Sticky",
+  "name": "IMNOT - Email Sticky",
+  "class": "imnot-email-sticky-section",
+  "enabled_on": {
+    "groups": ["header", "footer"]
+  },
   "settings": [
+    {
+      "type": "header",
+      "content": "01 - General"
+    },
+    {
+      "type": "paragraph",
+      "content": "Floating email signup form. Connects to Shopify Customers and email marketing automations."
+    },
     {
       "type": "checkbox",
       "id": "enable_sticky",
       "label": "Enable Email Sticky",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "02 - Content"
     },
     {
       "type": "textarea",
@@ -257,12 +275,61 @@
       "id": "success_message",
       "label": "Success message",
       "default": "YOU'RE IN. CHECK YOUR INBOX."
+    },
+    {
+      "type": "text",
+      "id": "email_placeholder",
+      "label": "Email placeholder",
+      "default": "Email"
+    },
+    {
+      "type": "header",
+      "content": "03 - Appearance"
+    },
+    {
+      "type": "range",
+      "id": "box_width",
+      "label": "Box width",
+      "min": 220,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "default": 250
+    },
+    {
+      "type": "range",
+      "id": "bottom_offset",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "right_offset",
+      "label": "Right spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "04 - Marketing"
+    },
+    {
+      "type": "paragraph",
+      "content": "Uses Shopify native newsletter subscription. Configure welcome emails and discount codes in Shopify Marketing > Automations."
     }
   ],
   "presets": [
     {
-      "name": "Email Sticky"
+      "name": "IMNOT - Email Sticky"
     }
   ]
 }
 {% endschema %}
+
