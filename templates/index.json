@@ -17,7 +17,7 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/S17_1604_61baf993-cbe0-4065-a18e-5a7ac32bbc68.jpg",
+        "image": "shopify://shop_images/imnott_82.jpg",
         "banner_link": "shopify://collections/basic-wears",
         "banner_link_new_tab": false,
         "video_background": false,
@@ -54,29 +54,6 @@
         "adapt_height_first_image": true,
         "desktop_content_position": "middle-center",
         "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
-    "image_banner_kNkyTy": {
-      "type": "image-banner",
-      "name": "t:sections.image-banner.presets.name",
-      "settings": {
-        "banner_link": "",
-        "banner_link_new_tab": false,
-        "video_background": false,
-        "video_url": "",
-        "video_url_link": "",
-        "show_banner_desktop_only": false,
-        "show_banner_mobile_only": false,
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "adapt_height_first_image": false,
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
         "desktop_content_alignment": "center",
         "color_scheme": "background-1",
         "mobile_content_alignment": "center",
@@ -374,7 +351,6 @@
   "order": [
     "image_banner_DBLHXk",
     "image_banner_bXEXxQ",
-    "image_banner_kNkyTy",
     "image_banner_UXUHj6",
     "image_banner_R7FCbC",
     "featured_collection",
