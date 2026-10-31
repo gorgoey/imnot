@@ -23,7 +23,7 @@
         "400416e7-65e2-48f6-9189-673a566df423": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Terms  and Conditions</p>",
+            "heading": "<p>Terms &nbsp;and Conditions</p>",
             "heading_size": "h2"
           }
         }
@@ -33,7 +33,7 @@
       ],
       "settings": {
         "desktop_content_position": "center",
-        "content_alignment": "center",
+        "content_alignment": "left",
         "color_scheme": "background-1",
         "full_width": true,
         "padding_top": 40,
@@ -53,7 +53,7 @@
         "template--16001727332525__b463e108-733e-4d51-88ec-fc88ba8cfdbb-1671505666ad92343a-1": {
           "type": "text",
           "settings": {
-            "text": "<p><br/><strong>We do not offer returns for refunds at this time. </strong>Purchasers must request an exchange or return within 7 days of receiving our order. The item(s) must be returned in original condition with the original packaging and all tags attached. Any garments that appear to have been worn, washed, or altered in any way will be refused. Please take care when trying on garments, as we cannot accept garments that have makeup stains and/or that smell of perfume. The item/s must be returned to our warehouse before the refund or exchange is made.</p><p>Items purchased during promotional periods (using a discount or promotion code) no exchange and no return, no refunds. </p><p><a href=\"/pages/shipping-exchanges\" target=\"_blank\" title=\"SHIPPING & EXCHANGES\"><em><strong>how to exchanges</strong></em></a></p>"
+            "text": "<p><br/><strong>We do not offer returns for refunds at this time. </strong>Purchasers must request an exchange or return within 7 days of receiving our order. The item(s) must be returned in original condition with the original packaging and all tags attached. Any garments that appear to have been worn, washed, or altered in any way will be refused. Please take care when trying on garments, as we cannot accept garments that have makeup stains and/or that smell of perfume. The item/s must be returned to our warehouse before the refund or exchange is made.</p><p>Items purchased during promotional periods (using a discount or promotion code) no exchange and no return, no refunds.&nbsp;</p><p><a href=\"/pages/shipping-exchanges\" target=\"_blank\" title=\"SHIPPING & EXCHANGES\"><em><strong>how to exchanges</strong></em></a></p>"
           }
         },
         "template--16001727332525__b463e108-733e-4d51-88ec-fc88ba8cfdbb-1671505666ad92343a-2": {
