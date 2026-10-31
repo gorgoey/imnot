@@ -115,25 +115,6 @@
     },
     "21ee0fe2-5006-492f-ba46-96ba9154dab2": {
       "type": "rich-text",
-      "blocks": {
-        "55d729ea-08f2-4675-8f53-571c48c13a4b": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>How to exchange</p>",
-            "heading_size": "h2"
-          }
-        },
-        "3ab1008e-3b82-4d3f-8c31-524c376b8626": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Exchanged items can be shipped to this address : 199/151 ZERENE Village Tha Kham, Kanchana Pisek Road ,<br/>Tha Kham Subdistrict,<br/>Bang Khun Thian District,<br/>Bangkok 10150</p><p>We are not responsible for the shipping costs associated with these items. You can return it using any carrier as long as you have proof of receipt or a tracking number. Please send an email with your order number, name, and address, as well as the tracking number/receipt, to<br/>imnotamorningperson.official@gmail.com. We'd appreciate it if you could tell us why you're returning or exchanging something.</p><p><strong>We are not responsible for items lost during return shipping. We strongly recommend using a trackable shipping service and keeping proof of shipment.</strong></p><p></p>"
-          }
-        }
-      },
-      "block_order": [
-        "55d729ea-08f2-4675-8f53-571c48c13a4b",
-        "3ab1008e-3b82-4d3f-8c31-524c376b8626"
-      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "left",
@@ -156,13 +137,21 @@
         "35142379-d7b0-4407-b66c-a18b9f581202": {
           "type": "text",
           "settings": {
-            "text": "<p>Please allow 7–10 business days from the time we receive your return at our warehouse for our team to process the exchange. Once your exchange has been shipped, you will receive an email with the tracking information.<br/><br/>Please note that we do not offer returns for refunds at this time. We only accept size exchanges for full-priced items within 14 days of delivery, and exchanges are limited to one per order.<br/><br/>Customers are responsible for all shipping costs related to exchanges, including the cost of returning the item to our warehouse and the shipping cost for sending the exchanged item back to you.<br/><br/>When returning an item, please ensure that the package is marked as a “RETURN” to help avoid additional customs charges. If any taxes, duties, or customs fees are incurred, these charges will be the responsibility of the sender or original customer.<br/><br/><strong>INTERNATIONAL EXCHANGES</strong><br/><br/>For international orders, a $15 USD exchange handling fee applies to each exchange request. This fee covers the administrative and processing costs associated with international exchanges and does not include shipping costs.<br/><br/>Customers are responsible for all shipping costs associated with the exchange, including return shipping and the shipping cost of the replacement item. A return shipping label may be provided upon request, with the applicable cost charged to the customer.<br/><br/>Any applicable duties, taxes, customs fees, or other charges incurred during the return or delivery of the replacement item are the responsibility of the customer.<br/><br/>Replacement items will only be shipped after the returned item has been received, inspected, and approved by our warehouse team.<br/><br/>EXCHANGE CONDITIONS<br/><br/>* Items must be new, unused, unworn, and with all original tags attached.<br/>* Sale items or items purchased with any discount are not eligible for exchange.<br/>* Exchanges are subject to product availability at the time the return is received and processed.<br/>* All returned items will be inspected before the exchange is approved.<br/>* Exchange handling fees and shipping costs are non-refundable.<br/><br/><em>If you need to update the shipping address for your exchange, please contact us at IMNOTAMORNINGPERSON.OFFICIAL@GMAIL.COM and wait for our confirmation before returning your item.</em></p><p></p>"
+            "text": "<p>Please allow 7–10 business days from the time we receive your return at our warehouse for our team to process the exchange. Once your exchange has been shipped, you will receive an email with the tracking information.<br/><br/>Please note that we do not offer returns for refunds at this time. We only accept size exchanges for full-priced items within 14 days of delivery, and exchanges are limited to one per order.<br/><br/>Customers are responsible for all shipping costs related to exchanges, including the cost of returning the item to our warehouse and the shipping cost for sending the exchanged item back to you.<br/><br/>When returning an item, please ensure that the package is marked as a “RETURN” to help avoid additional customs charges. If any taxes, duties, or customs fees are incurred, these charges will be the responsibility of the sender or original customer.<br/><br/></p>"
+          }
+        },
+        "heading_aRKD9V": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p><strong>INTERNATIONAL EXCHANGES</strong><br/></p>",
+            "heading_size": "h2"
           }
         }
       },
       "block_order": [
         "852faee5-dc4c-4c46-80b3-b86237c03cb8",
-        "35142379-d7b0-4407-b66c-a18b9f581202"
+        "35142379-d7b0-4407-b66c-a18b9f581202",
+        "heading_aRKD9V"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -176,6 +165,12 @@
     "d05ba3ec-8245-4475-bee4-253f3837c8fb": {
       "type": "rich-text",
       "blocks": {
+        "1ef73e0d-6f47-4a2d-a971-9e08cd77dbdf": {
+          "type": "text",
+          "settings": {
+            "text": "<p></p><p>For international orders, a $15 USD exchange handling fee applies to each exchange request. This fee covers the administrative and processing costs associated with international exchanges and does not include shipping costs.<br/><br/>Customers are responsible for all shipping costs associated with the exchange, including return shipping and the shipping cost of the replacement item. A return shipping label may be provided upon request, with the applicable cost charged to the customer.<br/><br/>Any applicable duties, taxes, customs fees, or other charges incurred during the return or delivery of the replacement item are the responsibility of the customer.<br/><br/>Replacement items will only be shipped after the returned item has been received, inspected, and approved by our warehouse team.<br/><br/>EXCHANGE CONDITIONS<br/><br/>* Items must be new, unused, unworn, and with all original tags attached.<br/>* Sale items or items purchased with any discount are not eligible for exchange.<br/>* Exchanges are subject to product availability at the time the return is received and processed.<br/>* All returned items will be inspected before the exchange is approved.<br/>* Exchange handling fees and shipping costs are non-refundable.<br/><br/><em>If you need to update the shipping address for your exchange, please contact us at IMNOTAMORNINGPERSON.OFFICIAL@GMAIL.COM and wait for our confirmation before returning your item.</em></p><p></p>"
+          }
+        },
         "a933341b-86c4-4600-b0b0-cfb5bf4fe597": {
           "type": "heading",
           "settings": {
@@ -183,7 +178,7 @@
             "heading_size": "h2"
           }
         },
-        "1ef73e0d-6f47-4a2d-a971-9e08cd77dbdf": {
+        "text_CUN6qh": {
           "type": "text",
           "settings": {
             "text": "<p>Most customs and import duties are levied once the parcel reaches its destination country. The only exceptions are parcels sent to Brazil, India, Israel, New Zealand, Malaysia, and Indonesia.<br/><br/>However, as your order passes through customs, you may be charged for handling fees and taxes. ANY TAXES, DUTIES, OR FEES ASSOCIATED WITH A PARCEL MUST BE PAID BY THE CUSTOMER. (this also applies to retail & wholesale customers).<br/><br/>We have no control over these charges and cannot estimate the cost because customs policies and import duties differ greatly from country to country.<br/><br/>It may be a good idea to check with your local customs office for current charges before placing your order, so you are not surprised by unexpected charges.</p><p>If a package is refused by the recipient, it will be considered abandoned and no refund or exchange will be issued.</p><p></p>"
@@ -191,8 +186,9 @@
         }
       },
       "block_order": [
+        "1ef73e0d-6f47-4a2d-a971-9e08cd77dbdf",
         "a933341b-86c4-4600-b0b0-cfb5bf4fe597",
-        "1ef73e0d-6f47-4a2d-a971-9e08cd77dbdf"
+        "text_CUN6qh"
       ],
       "settings": {
         "desktop_content_position": "center",
