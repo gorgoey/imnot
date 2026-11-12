@@ -3083,3 +3083,7 @@ details-disclosure > details {
 a[href*="/collections/archive-sale"] {
   color: #D62828 !important;
 }
+.badge.color-accent-2 {
+  background-color: #FFFFFF !important;
+  color: #D62828 !important;
+}
