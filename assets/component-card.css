@@ -132,6 +132,7 @@
 .card__badge.top {
   align-self: flex-start;
   grid-row-start: 1;
+  z-index: 1;
 }
 
 .card__badge.right {
