@@ -145,10 +145,10 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "Free shipping on orders over $350 ✦",
+              "text": "SHOP ARCHIVE SALE — SALE UP TO 40% OFF",
               "text_alignment": "center",
-              "color_scheme": "background-1",
-              "link": "shopify://collections/basic-wears"
+              "color_scheme": "accent-2",
+              "link": "shopify://collections/archive-sale"
             }
           },
           "9351c1e9-ca8c-499a-ab7c-546d89267368": {
