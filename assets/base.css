@@ -3093,4 +3093,18 @@ a[href*="/collections/archive-sale"] {
 .announcement-bar__message,
 .announcement-bar__message a {
   color: #000000 !important;
+}/* Announcement bar */
+.announcement-bar {
+  background: #ffffff !important;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+
+.announcement-bar,
+.announcement-bar a,
+.announcement-bar__message,
+.announcement-bar__message a {
+  color: #000000 !important;
+  text-align: center !important;
+  text-decoration: none !important;
 }
