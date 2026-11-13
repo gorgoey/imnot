@@ -272,7 +272,7 @@
       "disabled": true,
       "name": "Announcement popup",
       "settings": {
-        "enable_popup": false,
+        "enable_popup": true,
         "popup_image": "shopify://shop_images/bf-pop-up.webp",
         "popup_alt": "Announcement popup",
         "popup_link": "",
