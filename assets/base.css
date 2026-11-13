@@ -3087,3 +3087,10 @@ a[href*="/collections/archive-sale"] {
   background-color: #FFFFFF !important;
   color: #D62828 !important;
 }
+.announcement-bar a,
+.announcement-bar a:link,
+.announcement-bar a:visited,
+.announcement-bar__message,
+.announcement-bar__message a {
+  color: #000000 !important;
+}
