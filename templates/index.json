@@ -328,7 +328,7 @@
       "name": "Store Popup Poster",
       "settings": {
         "poster": "shopify://shop_images/S__24281102.jpg",
-        "poster_link": ""
+        "poster_link": "shopify://collections/archive-sale"
       }
     }
   },
