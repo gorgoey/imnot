@@ -1,85 +1,138 @@
+
+{% comment %}
+  IMNOTAMORNINGPERSON — Announcement Popup
+  Supports:
+  - Shopify Theme Editor preview
+  - WebP / PNG / JPG images
+  - Desktop / mobile responsive widths
+  - Delay and once-per-session
+  - Shopify section reload events
+{% endcomment %}
+
 {% if section.settings.enable_popup and section.settings.popup_image != blank %}
+
   <style>
     #popup-overlay-{{ section.id }} {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
-      display: none; /* เริ่มต้นซ่อนไว้ แล้วค่อยให้ JS เปิด */
+      inset: 0;
+      z-index: 9999;
+      display: none;
       align-items: center;
       justify-content: center;
-      z-index: 9999;
+      padding: 16px;
+      background: rgba(0, 0, 0, 0.6);
+      box-sizing: border-box;
     }
 
     #popup-box-{{ section.id }} {
-      background: black;
-      padding: 0;
-      border-radius: 8px;
-      position: absolute;
-      z-index: 1;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: relative;
+      width: {{ section.settings.desktop_width }}%;
+      max-width: 750px;
+      max-height: 80dvh;
       overflow: hidden;
+      background: #000;
+      border-radius: 8px;
+      box-sizing: border-box;
     }
 
-    #popup-box-{{ section.id }} img {
+    #popup-box-{{ section.id }} .popup-image {
       display: block;
       width: 100%;
-      max-width: 750px;
       height: auto;
-      border-radius: 8px;
+      max-height: 80dvh;
+      object-fit: contain;
+    }
+
+    #popup-box-{{ section.id }} .popup-link {
+      display: block;
+      line-height: 0;
     }
 
     #popup-close-{{ section.id }} {
       position: absolute;
       top: 10px;
       right: 10px;
-      background: #000;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-      color: #fff;
       z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: #000;
+      color: #fff;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
     }
 
-    @media screen and (min-width: 992px) {
-      #popup-box-{{ section.id }} {
-        width: {{ section.settings.desktop_width }}%;
-        max-width: {{ section.settings.desktop_width }}%;
-        max-height: 80%;
-      }
+    #popup-close-{{ section.id }}:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
     }
 
     @media screen and (max-width: 991px) {
       #popup-box-{{ section.id }} {
         width: {{ section.settings.mobile_width }}%;
-        max-width: {{ section.settings.mobile_width }}% !important;
-        max-height: 80%;
+        max-width: 100%;
       }
     }
+
+    {% comment %}
+      Theme Editor preview:
+      Show immediately without waiting for JavaScript.
+    {% endcomment %}
+
+    {% if request.design_mode %}
+      #popup-overlay-{{ section.id }} {
+        display: flex;
+      }
+    {% endif %}
   </style>
 
-  <div id="popup-overlay-{{ section.id }}" class="announcement-popup-overlay">
-    <div id="popup-box-{{ section.id }}">
-      <button id="popup-close-{{ section.id }}">&times;</button>
+  <div
+    id="popup-overlay-{{ section.id }}"
+    class="announcement-popup-overlay"
+    data-popup-section="{{ section.id }}"
+    aria-hidden="{% if request.design_mode %}false{% else %}true{% endif %}"
+  >
+    <div
+      id="popup-box-{{ section.id }}"
+      class="announcement-popup-box"
+      role="dialog"
+      aria-modal="true"
+      aria-label="{{ section.settings.popup_alt | escape }}"
+    >
+      <button
+        id="popup-close-{{ section.id }}"
+        type="button"
+        aria-label="Close announcement popup"
+      >
+        &times;
+      </button>
 
       {% if section.settings.popup_link != blank %}
         <a
+          class="popup-link"
           href="{{ section.settings.popup_link }}"
           {% if section.settings.open_new_tab %}
-            target="_blank" rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
           {% endif %}
         >
       {% endif %}
 
-      {{ section.settings.popup_image
+      {{
+        section.settings.popup_image
         | image_url: width: 1200
         | image_tag:
-          loading: 'lazy',
-          alt: section.settings.popup_alt | escape
+          class: 'popup-image',
+          loading: 'eager',
+          alt: section.settings.popup_alt,
+          widths: '320, 480, 640, 750, 960, 1200',
+          sizes: '(max-width: 991px) 90vw, 750px'
       }}
 
       {% if section.settings.popup_link != blank %}
@@ -89,43 +142,105 @@
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const overlay = document.getElementById('popup-overlay-{{ section.id }}');
-      const closeBtn = document.getElementById('popup-close-{{ section.id }}');
-      if (!overlay || !closeBtn) return;
+    (function () {
+      const sectionId = {{ section.id | json }};
+      const overlayId = 'popup-overlay-' + sectionId;
+      const closeId = 'popup-close-' + sectionId;
+      const storageKey = 'announcement_popup_closed_' + sectionId;
 
-      {% if section.settings.show_once_per_session %}
-        if (window.sessionStorage.getItem('announcement_popup_closed_{{ section.id }}')) {
-          return;
+      const isEditor = {{ request.design_mode | json }};
+      const showOnce = {{ section.settings.show_once_per_session | json }};
+      const closeOnOverlay = {{ section.settings.close_on_overlay | json }};
+      const delayMs = {{ section.settings.show_delay | times: 1000 | json }};
+
+      function initPopup() {
+        const overlay = document.getElementById(overlayId);
+        const closeBtn = document.getElementById(closeId);
+
+        if (!overlay || !closeBtn) return;
+
+        // Avoid duplicate initialization.
+        if (overlay.dataset.initialized === 'true') return;
+        overlay.dataset.initialized = 'true';
+
+        let showTimer = null;
+
+        function showPopup() {
+          overlay.style.display = 'flex';
+          overlay.setAttribute('aria-hidden', 'false');
         }
-      {% endif %}
 
-      const delayMs = {{ section.settings.show_delay | default: 0 }} * 1000;
+        function closePopup() {
+          if (showTimer !== null) {
+            clearTimeout(showTimer);
+            showTimer = null;
+          }
 
-      setTimeout(function () {
-        overlay.style.display = 'flex';
-      }, delayMs);
+          overlay.style.display = 'none';
+          overlay.setAttribute('aria-hidden', 'true');
 
-      function closePopup() {
-        overlay.style.display = 'none';
-        {% if section.settings.show_once_per_session %}
-          window.sessionStorage.setItem('announcement_popup_closed_{{ section.id }}', 'true');
-        {% endif %}
-      }
+          if (!isEditor && showOnce) {
+            try {
+              sessionStorage.setItem(storageKey, 'true');
+            } catch (error) {
+              console.warn('Popup session storage unavailable', error);
+            }
+          }
+        }
 
-      closeBtn.addEventListener('click', function () {
-        closePopup();
-      });
+        closeBtn.addEventListener('click', closePopup);
 
-      {% if section.settings.close_on_overlay %}
-        overlay.addEventListener('click', function (e) {
-          if (e.target === overlay) {
+        if (closeOnOverlay) {
+          overlay.addEventListener('click', function (event) {
+            if (event.target === overlay) {
+              closePopup();
+            }
+          });
+        }
+
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape' && overlay.style.display === 'flex') {
             closePopup();
           }
         });
-      {% endif %}
-    });
+
+        // Always preview immediately in the Shopify Theme Editor.
+        if (isEditor) {
+          showPopup();
+          return;
+        }
+
+        // Check whether popup was already closed this session.
+        if (showOnce) {
+          try {
+            if (sessionStorage.getItem(storageKey) === 'true') {
+              return;
+            }
+          } catch (error) {
+            console.warn('Popup session storage unavailable', error);
+          }
+        }
+
+        showTimer = setTimeout(showPopup, delayMs);
+      }
+
+      // Standard storefront initialization.
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPopup);
+      } else {
+        initPopup();
+      }
+
+      // Shopify Theme Editor section reload.
+      document.addEventListener('shopify:section:load', function (event) {
+        if (event.detail.sectionId === sectionId) {
+          initPopup();
+        }
+      });
+
+    })();
   </script>
+
 {% endif %}
 
 {% schema %}
