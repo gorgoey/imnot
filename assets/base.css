@@ -3103,4 +3103,8 @@ a[href*="/collections/archive-sale"] {
   color: #000000 !important;
   text-align: center !important;
   text-decoration: none !important;
+}/* Announcement bar scrolls away */
+.shopify-section-group-header-group.announcement-bar-section {
+  position: static !important;
+  top: auto !important;
 }
