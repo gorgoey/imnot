@@ -3087,21 +3087,17 @@ a[href*="/collections/archive-sale"] {
   background-color: #FFFFFF !important;
   color: #D62828 !important;
 }
-.announcement-bar a,
-.announcement-bar a:link,
-.announcement-bar a:visited,
-.announcement-bar__message,
-.announcement-bar__message a {
-  color: #000000 !important;
-}/* Announcement bar */
+/* Announcement Bar */
 .announcement-bar {
   background: #ffffff !important;
-  border-top: 1px solid #000000;
-  border-bottom: 1px solid #000000;
+  border-top: none !important;
+  border-bottom: 1px solid #000000 !important;
 }
 
 .announcement-bar,
 .announcement-bar a,
+.announcement-bar a:link,
+.announcement-bar a:visited,
 .announcement-bar__message,
 .announcement-bar__message a {
   color: #000000 !important;
