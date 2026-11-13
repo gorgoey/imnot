@@ -155,10 +155,10 @@
             "type": "announcement",
             "disabled": true,
             "settings": {
-              "text": "Welcome to our store",
+              "text": "Shop archive sale up to 40% off",
               "text_alignment": "center",
               "color_scheme": "accent-1",
-              "link": ""
+              "link": "shopify://collections/archive-sale"
             }
           }
         },
